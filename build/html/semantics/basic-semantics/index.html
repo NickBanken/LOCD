@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn offline coding by doing</title>
+    <link rel="stylesheet" href="../../../fontawesome/css/all.css">
+    <link rel="icon" href="../../../img/locdfavicon.png" type="image/x-icon">
+
+
+    
+
+    <link rel="stylesheet" href="../../../codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="../../../codemirror/theme/mdn-like.css">
+	<link rel="stylesheet" href="../../../codemirror/addon/hint/show-hint.css">
+
+    
+    <script src="../../../js/setup.js"></script>
+
+    
+    <script src="../../../codemirror/lib/codemirror.js"></script>
+    <script src="../../../codemirror/mode/javascript/javascript.js"></script>
+    <script src="../../../codemirror/mode/css/css.js"></script>
+    <script src="../../../codemirror/mode/xml/xml.js"></script>
+	<script src="../../../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+	<script src="../../../codemirror/addon/hint/show-hint.js"></script>
+	<script src="../../../codemirror/addon/hint/xml-hint.js"></script>
+	<script src="../../../codemirror/addon/hint/html-hint.js"></script>
+	
+
+	<link rel="stylesheet" type="text/css" href="../../../css/main.css">
+	
+	<style>
+
+		select{
+			padding: 8px 16px;
+			color: blue;
+		}
+
+		.select__head{
+			font-weight: bold;
+			font-size:14px;
+			color:black;
+		}
+
+		.select__second{
+			text-indent: 5px;
+		}
+	</style>
+    
+    
+</head>
+<body>
+
+    
+	
+<header>
+    <nav class="nav">
+        <a href="../../../" class="nav__logo"></a>
+
+        <ul class="nav__menu">
+            <li>
+                <a href="#">Practice</a>
+            </li>
+            <li>
+                <a href="#">Documentation</a>
+            </li>
+            <li>
+                <a href="#">Help</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="nav__backlayer"></div>
+
+<main>
+	
+    <div id="viewport" class="viewport">
+        <div class="instructions">
+            <nav class="instructions__nav">
+                <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+                <div class="dropdown">
+                    <button class="dropdown__btn"><i class="fas fa-bars"></i> Basic Semantics</button>
+                    <div id="dropdownList" class="dropdown__list">
+                        <ul>
+                            <li class="drop__chapter">0 - Start </li>
+                            <li><a class="drop__exercise"  href="../../../index.html">Home</a></li>
+                            
+
+
+<li class="drop__topic">general</li>
+
+
+
+	
+	<li ><div class="drop__chapter">1 - intro</div></li>
+	
+	
+		
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../general/intro/background-of-the-web/index.html">background of the web</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../general/intro/how-does-the-internet-work/index.html">how does the internet work</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../general/intro/the-internet/index.html">the internet</a></li>
+				
+			  
+		
+	
+
+		
+
+
+
+                            
+
+
+<li class="drop__topic">html</li>
+
+
+
+	
+	<li ><div class="drop__chapter">1 - intro</div></li>
+	
+	
+		
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/intro/html/index.html">html</a></li>
+				
+			
+		
+		
+			
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/intro/test123/index.html">test123</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/intro/why-html/index.html">why html</a></li>
+				
+			  
+		
+	
+
+	
+	<li ><div class="drop__chapter">2 - semantics</div></li>
+	
+	
+		
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/semantics/basic-semantics/index.html">basic semantics</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/semantics/chinese-letter/index.html">chinese letter</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/semantics/exercise-quotes/index.html">exercise quotes</a></li>
+				
+			  
+		
+	
+
+	
+	<li ><div class="drop__chapter">3 - test</div></li>
+	
+	
+		
+			<li><div class="drop__sub">1 - positioning</div></li>
+			
+				
+				
+					<li><a class="drop__exercise--sub" href="../../../html/test/positioning/how/indes">how</a></li>
+				
+			
+				
+				
+					<li><a class="drop__exercise--sub" href="../../../html/test/positioning/to/indes">to</a></li>
+				
+			
+		
+	
+
+		
+
+
+
+                        </ul>
+                    </div>
+                </div>
+
+				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+            </nav>
+
+            <div id="insertData" class="instructions__info">
+
+                <div id="max"class="resize max"><i class="fas fa-arrows-alt"></i></div>
+                <div id="min"class="resize min"><i class="fas fa-compress-arrows-alt"></i></div>
+                
+
+				
+				
+                
+                
+                
+
+				
+				
+				
+                <nav class="instructions__nav instructions__nav--bottom">
+                    <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
+                    
+                    <a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
+                </nav>
+
+            </div>
+
+        </div>
+        
+    </div>
+</main>
+
+    
+
+
+<script src="../../../js/script.js"></script>
+<script src="../../../js/sticky.js"></script>
+<script src="../../../js/navigation.js"></script>
+</body>
+</html>

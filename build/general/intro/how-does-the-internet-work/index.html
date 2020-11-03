@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn offline coding by doing</title>
+    <link rel="stylesheet" href="../../../fontawesome/css/all.css">
+    <link rel="icon" href="../../../img/locdfavicon.png" type="image/x-icon">
+
+
+    
+
+    <link rel="stylesheet" href="../../../codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="../../../codemirror/theme/mdn-like.css">
+	<link rel="stylesheet" href="../../../codemirror/addon/hint/show-hint.css">
+
+    
+    <script src="../../../js/setup.js"></script>
+
+    
+    <script src="../../../codemirror/lib/codemirror.js"></script>
+    <script src="../../../codemirror/mode/javascript/javascript.js"></script>
+    <script src="../../../codemirror/mode/css/css.js"></script>
+    <script src="../../../codemirror/mode/xml/xml.js"></script>
+	<script src="../../../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+	<script src="../../../codemirror/addon/hint/show-hint.js"></script>
+	<script src="../../../codemirror/addon/hint/xml-hint.js"></script>
+	<script src="../../../codemirror/addon/hint/html-hint.js"></script>
+	
+
+	<link rel="stylesheet" type="text/css" href="../../../css/main.css">
+	
+	<style>
+
+		select{
+			padding: 8px 16px;
+			color: blue;
+		}
+
+		.select__head{
+			font-weight: bold;
+			font-size:14px;
+			color:black;
+		}
+
+		.select__second{
+			text-indent: 5px;
+		}
+	</style>
+    
+    
+</head>
+<body>
+
+    
+	
+<header>
+    <nav class="nav">
+        <a href="../../../" class="nav__logo"></a>
+
+        <ul class="nav__menu">
+            <li>
+                <a href="#">Practice</a>
+            </li>
+            <li>
+                <a href="#">Documentation</a>
+            </li>
+            <li>
+                <a href="#">Help</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="nav__backlayer"></div>
+
+<main>
+	
+    <div id="viewport" class="viewport">
+        <div class="instructions">
+            <nav class="instructions__nav">
+                <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
+                <div class="dropdown">
+                    <button class="dropdown__btn"><i class="fas fa-bars"></i> How does the internet work?</button>
+                    <div id="dropdownList" class="dropdown__list">
+                        <ul>
+                            <li class="drop__chapter">0 - Start </li>
+                            <li><a class="drop__exercise"  href="../../../index.html">Home</a></li>
+                            
+
+
+<li class="drop__topic">general</li>
+
+
+
+	
+	<li ><div class="drop__chapter">1 - intro</div></li>
+	
+	
+		
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../general/intro/background-of-the-web/index.html">background of the web</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../general/intro/how-does-the-internet-work/index.html">how does the internet work</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../general/intro/the-internet/index.html">the internet</a></li>
+				
+			  
+		
+	
+
+		
+
+
+
+                            
+
+
+<li class="drop__topic">html</li>
+
+
+
+	
+	<li ><div class="drop__chapter">1 - intro</div></li>
+	
+	
+		
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/intro/html/index.html">html</a></li>
+				
+			
+		
+		
+			
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/intro/test123/index.html">test123</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/intro/why-html/index.html">why html</a></li>
+				
+			  
+		
+	
+
+	
+	<li ><div class="drop__chapter">2 - semantics</div></li>
+	
+	
+		
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/semantics/basic-semantics/index.html">basic semantics</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/semantics/chinese-letter/index.html">chinese letter</a></li>
+				
+			
+		
+		
+			
+				
+					<li><a class="drop__exercise" href="../../../html/semantics/exercise-quotes/index.html">exercise quotes</a></li>
+				
+			  
+		
+	
+
+	
+	<li ><div class="drop__chapter">3 - test</div></li>
+	
+	
+		
+			<li><div class="drop__sub">1 - positioning</div></li>
+			
+				
+				
+					<li><a class="drop__exercise--sub" href="../../../html/test/positioning/how/indes">how</a></li>
+				
+			
+				
+				
+					<li><a class="drop__exercise--sub" href="../../../html/test/positioning/to/indes">to</a></li>
+				
+			
+		
+	
+
+		
+
+
+
+                        </ul>
+                    </div>
+                </div>
+
+				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
+            </nav>
+
+            <div id="insertData" class="instructions__info">
+
+                <div id="max"class="resize max"><i class="fas fa-arrows-alt"></i></div>
+                <div id="min"class="resize min"><i class="fas fa-compress-arrows-alt"></i></div>
+                
+
+				
+				<h1 id="how-the-web-works">How the Web works</h1>
+<p>How the web works provides a simplified view of what happens when you view a webpage in a web browser on your computer or phone.</p>
+<p>This theory is not essential to writing web code in the short term, but before long you&rsquo;ll really start to benefit from understanding what&rsquo;s happening in the background.</p>
+<h2 id="clients-and-servers">Clients and servers</h2>
+<p>Computers connected to the web are called <strong>clients</strong> and <strong>servers</strong>. A simplified diagram of how they interact might look like this:</p>
+<div class="instructions__image">
+	<img src='../../../img/general/Client-server.jpg' alt='test'>
+</div>
+
+<ul>
+<li>
+<p>Clients are the typical web user&rsquo;s internet-connected devices (for example, your computer connected to your Wi-Fi, or your phone connected to your mobile network) and web-accessing software available on those devices (usually a web browser like Firefox or Chrome).</p>
+</li>
+<li>
+<p>Servers are computers that store webpages, sites, or apps. When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user&rsquo;s web browser.</p>
+</li>
+</ul>
+<h2 id="other-parts-of-the-toolbox">Other parts of the toolbox</h2>
+<p>The client and server we&rsquo;ve described above don&rsquo;t tell the whole story. There are many other parts involved, and we&rsquo;ll describe them below.</p>
+<p>For now, let&rsquo;s imagine that the web is a road. On one end of the road is the client, which is like your house. On the other end of the road is the server, which is a shop you want to buy something from.</p>
+<div class="instructions__image">
+	<img src='../../../img/general/road.jpg' alt='Person crossing the road'>
+</div>
+
+<p>In addition to the client and the server, we also need to say hello to:</p>
+<ul>
+<li>Your internet connection: Allows you to send and receive data on the web. It&rsquo;s basically like the street between your house and the shop.</li>
+<li>TCP/IP: Transmission Control Protocol and Internet Protocol are communication protocols that define how data should travel across the web. This is like the transport mechanisms that let you place an order, go to the shop, and buy your goods. In our example, this is like a car or a bike (or however else you might get around).</li>
+<li>DNS: Domain Name Servers are like an address book for websites. When you type a web address in your browser, the browser looks at the DNS to find the website&rsquo;s real address before it can retrieve the website. The browser needs to find out which server the website lives on, so it can send HTTP messages to the right place (see below). This is like looking up the address of the shop so you can access it.</li>
+<li>HTTP: Hypertext Transfer Protocol is an application protocol that defines a language for clients and servers to speak to each other. This is like the language you use to order your goods.</li>
+<li>Component files: A website is made up of many different files, which are like the different parts of the goods you buy from the shop. These files come in two main types:
+<ul>
+<li>Code files: Websites are built primarily from HTML, CSS, and JavaScript, though you&rsquo;ll meet other technologies a bit later.</li>
+<li>Assets: This is a collective name for all the other stuff that makes up a website, such as images, music, video, Word documents, and PDFs.</li>
+</ul>
+</li>
+</ul>
+<h2 id="so-what-happens-exactly">So what happens, exactly?</h2>
+<p>When you type a web address into your browser (for our analogy that&rsquo;s like walking to the shop):</p>
+<ol>
+<li>The browser goes to the DNS server, and finds the real address of the server that the website lives on (you find the address of the shop).</li>
+<li>The browser sends an HTTP request message to the server, asking it to send a copy of the website to the client (you go to the shop and order your goods). This message, and all other data sent between the client and the server, is sent across your internet connection using TCP/IP.</li>
+<li>If the server approves the client&rsquo;s request, the server sends the client a &ldquo;200 OK&rdquo; message, which means &ldquo;Of course you can look at that website! Here it is&rdquo;, and then starts sending the website&rsquo;s files to the browser as a series of small chunks called data packets (the shop gives you your goods, and you bring them back to your house).</li>
+<li>The browser assembles the small chunks into a complete website and displays it to you (the goods arrive at your door — new shiny stuff, awesome!).</li>
+</ol>
+<h2 id="dns-explained">DNS explained</h2>
+<p>Real web addresses aren&rsquo;t the nice, memorable strings you type into your address bar to find your favorite websites. They are special numbers that look like this: 63.245.215.20.</p>
+<p>This is called an IP address, and it represents a unique location on the web. However, it&rsquo;s not very easy to remember, is it? That&rsquo;s why Domain Name Servers were invented. These are special servers that match up a web address you type into your browser (like &ldquo;mozilla.org&rdquo;) to the website&rsquo;s real (IP) address.</p>
+<p>Websites can be reached directly via their IP addresses. You can find the IP address of a website by typing its domain into a tool like IP Checker.</p>
+<h2 id="packets-explained">Packets explained</h2>
+<p>Earlier we used the term &ldquo;packets&rdquo; to describe the format in which the data is sent from server to client. What do we mean here? Basically, when data is sent across the web, it is sent as thousands of small chunks, so that many different web users can download the same website at the same time. If websites were sent as single big chunks, only one user could download one at a time, which obviously would make the web very inefficient and not much fun to use.</p>
+
+                
+                
+                
+
+				
+				
+				
+                <nav class="instructions__nav instructions__nav--bottom">
+                    <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
+                    
+                    <a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
+                </nav>
+
+            </div>
+
+        </div>
+        
+    </div>
+</main>
+
+    
+
+
+<script src="../../../js/script.js"></script>
+<script src="../../../js/sticky.js"></script>
+<script src="../../../js/navigation.js"></script>
+</body>
+</html>
