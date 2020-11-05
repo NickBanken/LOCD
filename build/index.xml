@@ -9,6 +9,16 @@
     <lastBuildDate>Thu, 20 Aug 2020 12:16:17 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Background of the web</title>
+      <link>/about/</link>
+      <pubDate>Mon, 02 Nov 2020 09:25:04 +0100</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Treeeeee MotherDucker Tim Berners-Lee, a British scientist, invented the World Wide Web (WWW) in 1989, while working at CERN. The web was originally conceived and developed to meet the demand for automated information-sharing between scientists in universities and institutes around the world.
+On 30 April 1993, CERN put the World Wide Web software in the public domain. Later, CERN made a release available with an open licence, a more reliable way to maximise its dissemination.</description>
+    </item>
+    
+    <item>
+      <title>Background of the web</title>
       <link>/general/intro/background-of-the-web/</link>
       <pubDate>Mon, 02 Nov 2020 09:25:04 +0100</pubDate>
       
@@ -36,79 +46,6 @@ Clients and servers Computers connected to the web are called clients and server
       <guid>/general/intro/the-internet/</guid>
       <description>How does the internet work In short The Internet is the backbone of the Web, the technical infrastructure that makes the Web possible. At its most basic, the Internet is a large network of computers which communicate all together.
 The history of the Internet is somewhat obscure (you can read more about it here). It began in the 1960s as a US-army-funded research project, then evolved into a public infrastructure in the 1980s with the support of many public universities and private companies.</description>
-    </item>
-    
-    <item>
-      <title>Chinese Letter</title>
-      <link>/html/semantics/chinese-letter/</link>
-      <pubDate>Tue, 25 Aug 2020 15:53:27 +0200</pubDate>
-      
-      <guid>/html/semantics/chinese-letter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Basic Semantics</title>
-      <link>/html/semantics/basic-semantics/</link>
-      <pubDate>Tue, 25 Aug 2020 15:53:19 +0200</pubDate>
-      
-      <guid>/html/semantics/basic-semantics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>How</title>
-      <link>/html/test/positioning/how/</link>
-      <pubDate>Tue, 25 Aug 2020 15:52:07 +0200</pubDate>
-      
-      <guid>/html/test/positioning/how/</guid>
-      <description>Why HTML????</description>
-    </item>
-    
-    <item>
-      <title>HTML</title>
-      <link>/html/intro/html/</link>
-      <pubDate>Tue, 25 Aug 2020 15:52:07 +0200</pubDate>
-      
-      <guid>/html/intro/html/</guid>
-      <description>HTML FIXED HAHAHAHAHA
-I AM FIXING THIS TRUE WOOP WOOP BAGUETTE DU FROMAGE </description>
-    </item>
-    
-    <item>
-      <title>to</title>
-      <link>/html/test/positioning/to/</link>
-      <pubDate>Tue, 25 Aug 2020 15:52:07 +0200</pubDate>
-      
-      <guid>/html/test/positioning/to/</guid>
-      <description>Why HTML????</description>
-    </item>
-    
-    <item>
-      <title>Why Html</title>
-      <link>/html/intro/test123/</link>
-      <pubDate>Tue, 25 Aug 2020 15:52:07 +0200</pubDate>
-      
-      <guid>/html/intro/test123/</guid>
-      <description>Why HTML????</description>
-    </item>
-    
-    <item>
-      <title>Why Html</title>
-      <link>/html/intro/why-html/</link>
-      <pubDate>Tue, 25 Aug 2020 15:52:07 +0200</pubDate>
-      
-      <guid>/html/intro/why-html/</guid>
-      <description>Why HTML????</description>
-    </item>
-    
-    <item>
-      <title>Exercise Quotes</title>
-      <link>/html/semantics/exercise-quotes/</link>
-      <pubDate>Thu, 20 Aug 2020 14:42:50 +0200</pubDate>
-      
-      <guid>/html/semantics/exercise-quotes/</guid>
-      <description>This is the quotes exercise!</description>
     </item>
     
   </channel>

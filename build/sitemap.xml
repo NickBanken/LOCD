@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/about/</loc>
+    <lastmod>2020-11-02T09:25:04+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/general/intro/background-of-the-web/</loc>
     <lastmod>2020-11-02T09:25:04+01:00</lastmod>
   </url>
@@ -15,46 +20,6 @@
   <url>
     <loc>/general/intro/the-internet/</loc>
     <lastmod>2020-09-03T16:35:21+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/html/semantics/chinese-letter/</loc>
-    <lastmod>2020-08-25T15:53:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/html/semantics/basic-semantics/</loc>
-    <lastmod>2020-08-25T15:53:19+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/html/test/positioning/how/</loc>
-    <lastmod>2020-08-25T15:52:07+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/html/intro/html/</loc>
-    <lastmod>2020-08-25T15:52:07+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/html/test/positioning/to/</loc>
-    <lastmod>2020-08-25T15:52:07+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/html/intro/test123/</loc>
-    <lastmod>2020-08-25T15:52:07+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/html/intro/why-html/</loc>
-    <lastmod>2020-08-25T15:52:07+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/html/semantics/exercise-quotes/</loc>
-    <lastmod>2020-08-20T14:42:50+02:00</lastmod>
   </url>
   
   <url>

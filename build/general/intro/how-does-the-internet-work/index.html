@@ -77,6 +77,8 @@
 </header>
 <div class="nav__backlayer"></div>
 
+
+
 <main>
 	
     <div id="viewport" class="viewport">
@@ -104,12 +106,20 @@
 		
 		
 			
+			
+				
+			
+		
+		
+			
+			
 				
 					<li><a class="drop__exercise" href="../../../general/intro/background-of-the-web/index.html">background of the web</a></li>
 				
 			
 		
 		
+			
 			
 				
 					<li><a class="drop__exercise" href="../../../general/intro/how-does-the-internet-work/index.html">how does the internet work</a></li>
@@ -118,104 +128,11 @@
 		
 		
 			
+			
 				
 					<li><a class="drop__exercise" href="../../../general/intro/the-internet/index.html">the internet</a></li>
 				
 			  
-		
-	
-
-		
-
-
-
-                            
-
-
-<li class="drop__topic">html</li>
-
-
-
-	
-	<li ><div class="drop__chapter">1 - intro</div></li>
-	
-	
-		
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/intro/html/index.html">html</a></li>
-				
-			
-		
-		
-			
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/intro/test123/index.html">test123</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/intro/why-html/index.html">why html</a></li>
-				
-			  
-		
-	
-
-	
-	<li ><div class="drop__chapter">2 - semantics</div></li>
-	
-	
-		
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/semantics/basic-semantics/index.html">basic semantics</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/semantics/chinese-letter/index.html">chinese letter</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/semantics/exercise-quotes/index.html">exercise quotes</a></li>
-				
-			  
-		
-	
-
-	
-	<li ><div class="drop__chapter">3 - test</div></li>
-	
-	
-		
-			<li><div class="drop__sub">1 - positioning</div></li>
-			
-				
-				
-					<li><a class="drop__exercise--sub" href="../../../html/test/positioning/how/indes">how</a></li>
-				
-			
-				
-				
-					<li><a class="drop__exercise--sub" href="../../../html/test/positioning/to/indes">to</a></li>
-				
-			
 		
 	
 
@@ -243,7 +160,7 @@
 <h2 id="clients-and-servers">Clients and servers</h2>
 <p>Computers connected to the web are called <strong>clients</strong> and <strong>servers</strong>. A simplified diagram of how they interact might look like this:</p>
 <div class="instructions__image">
-	<img src='../../../img/general/Client-server.jpg' alt='test'>
+	<img src='Client-server.jpg' alt='first browser'>
 </div>
 
 <ul>
@@ -258,7 +175,7 @@
 <p>The client and server we&rsquo;ve described above don&rsquo;t tell the whole story. There are many other parts involved, and we&rsquo;ll describe them below.</p>
 <p>For now, let&rsquo;s imagine that the web is a road. On one end of the road is the client, which is like your house. On the other end of the road is the server, which is a shop you want to buy something from.</p>
 <div class="instructions__image">
-	<img src='../../../img/general/road.jpg' alt='Person crossing the road'>
+	<img src='road.jpg' alt='Person crossing the road'>
 </div>
 
 <p>In addition to the client and the server, we also need to say hello to:</p>
@@ -299,19 +216,80 @@
                 <nav class="instructions__nav instructions__nav--bottom">
                     <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
                     
-                    <a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
+					<a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
                 </nav>
 
             </div>
 
+		</div>
+		<div class="editor">
+            
+            <div class="editor__input">
+                <div id="inputTab" class="input__tab">
+                    <div id="htmlView" class="tab tab--selected">index.html</div>
+                    <div id="cssView" class="tab">style.css</div>
+                    <div id="jsView" class="tab">script.js</div>
+                </div>
+                <div class="input__container">
+                
+                <div id="textareacontainer">
+                    <div class="textarea">
+                        <div id="textareawrapper">
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;h1&gt;This is a Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        And this
+    &lt;/li&gt;
+    &lt;li&gt;
+        a list
+    &lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;/body&gt;
+&lt;/html&gt;  
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+
+            <div class="editor__output">
+                <div class="output__tab">
+                    <div class="tab tab--selected">Result</div>
+                    <div class="tab">Console</div>
+                </div>
+                <div class="input__container">
+
+                    <div id="iframecontainer">
+                        <div id="iframe">
+                            <div id="iframewrapper">
+                                 <iframe frameborder="0" id="iframeResult" name="iframeResult" allowfullscreen="true"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
         
     </div>
 </main>
 
     
-
-
+<script src="../../../js/codeMirror.js"></script>
+<script src="../../../js/editor.js"></script>
 <script src="../../../js/script.js"></script>
 <script src="../../../js/sticky.js"></script>
 <script src="../../../js/navigation.js"></script>

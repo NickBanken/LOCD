@@ -77,6 +77,8 @@
 </header>
 <div class="nav__backlayer"></div>
 
+
+
 <main>
 	
     <div id="viewport" class="viewport">
@@ -104,12 +106,20 @@
 		
 		
 			
+			
+				
+			
+		
+		
+			
+			
 				
 					<li><a class="drop__exercise" href="../../../general/intro/background-of-the-web/index.html">background of the web</a></li>
 				
 			
 		
 		
+			
 			
 				
 					<li><a class="drop__exercise" href="../../../general/intro/how-does-the-internet-work/index.html">how does the internet work</a></li>
@@ -118,104 +128,11 @@
 		
 		
 			
+			
 				
 					<li><a class="drop__exercise" href="../../../general/intro/the-internet/index.html">the internet</a></li>
 				
 			  
-		
-	
-
-		
-
-
-
-                            
-
-
-<li class="drop__topic">html</li>
-
-
-
-	
-	<li ><div class="drop__chapter">1 - intro</div></li>
-	
-	
-		
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/intro/html/index.html">html</a></li>
-				
-			
-		
-		
-			
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/intro/test123/index.html">test123</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/intro/why-html/index.html">why html</a></li>
-				
-			  
-		
-	
-
-	
-	<li ><div class="drop__chapter">2 - semantics</div></li>
-	
-	
-		
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/semantics/basic-semantics/index.html">basic semantics</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/semantics/chinese-letter/index.html">chinese letter</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="../../../html/semantics/exercise-quotes/index.html">exercise quotes</a></li>
-				
-			  
-		
-	
-
-	
-	<li ><div class="drop__chapter">3 - test</div></li>
-	
-	
-		
-			<li><div class="drop__sub">1 - positioning</div></li>
-			
-				
-				
-					<li><a class="drop__exercise--sub" href="../../../html/test/positioning/how/indes">how</a></li>
-				
-			
-				
-				
-					<li><a class="drop__exercise--sub" href="../../../html/test/positioning/to/indes">to</a></li>
-				
-			
 		
 	
 
@@ -245,39 +162,39 @@
 <h2 id="a-simple-network">A simple network</h2>
 <p>When two computers need to communicate, you have to link them, either physically (usually with an Ethernet cable) or wirelessly (for example with WiFi or Bluetooth systems). All modern computers can sustain any of those connections.</p>
 <div class="instructions__image">
-	<img src='../../../img/general/internet-schema-1.png' alt='internet schema'>
+	<img src='internet-schema-1.png' alt='internet schema'>
 </div>
 
 <p>Such a network is not limited to two computers. You can connect as many computers as you wish. But it gets complicated quickly. If you&rsquo;re trying to connect, say, ten computers, you need 45 cables, with nine plugs per computer!</p>
 <div class="instructions__image">
-	<img src='../../../img/general/internet-schema-2.png' alt='internet schema'>
+	<img src='internet-schema-2.png' alt='internet schema'>
 </div>
 
 <p>To solve this problem, each computer on a network is connected to a special tiny computer called a router. This router has only one job: like a signaler at a railway station, it makes sure that a message sent from a given computer arrives at the right destination computer. To send a message to computer B, computer A must send the message to the router, which in turn forwards the message to computer B and makes sure the message is not delivered to computer C.</p>
 <p>Once we add a router to the system, our network of 10 computers only requires 10 cables: a single plug for each computer and a router with 10 plugs.</p>
 <div class="instructions__image">
-	<img src='../../../img/general/internet-schema-3.png' alt='internet schema'>
+	<img src='internet-schema-3.png' alt='internet schema'>
 </div>
 
 <h2 id="a-network-of-networks">A network of networks</h2>
 <p>So far so good. But what about connecting hundreds, thousands, billions of computers? Of course a single router can&rsquo;t scale that far, but, if you read carefully, we said that a router is a computer like any other, so what keeps us from connecting two routers together? Nothing, so let&rsquo;s do that.</p>
 <div class="instructions__image">
-	<img src='../../../img/general/internet-schema-4.png' alt='internet schema'>
+	<img src='internet-schema-4.png' alt='internet schema'>
 </div>
 
 <p>By connecting computers to routers, then routers to routers, we are able to scale infinitely.</p>
 <div class="instructions__image">
-	<img src='../../../img/general/internet-schema-5.png' alt='internet schema'>
+	<img src='internet-schema-5.png' alt='internet schema'>
 </div>
 
 <p>Such a network comes very close to what we call the Internet, but we&rsquo;re missing something. We built that network for our own purposes. There are other networks out there: your friends, your neighbors, anyone can have their own network of computers. But it&rsquo;s not really possible to set cables up between your house and the rest of the world, so how can you handle this? Well, there are already cables linked to your house, for example, electric power and telephone. The telephone infrastructure already connects your house with anyone in the world so it is the perfect wire we need. To connect our network to the telephone infrastructure, we need a special piece of equipment called a modem. This modem turns the information from our network into information manageable by the telephone infrastructure and vice versa.</p>
 <div class="instructions__image">
-	<img src='../../../img/general/internet-schema-6.png' alt='internet schema'>
+	<img src='internet-schema-6.png' alt='internet schema'>
 </div>
 
 <p>So we are connected to the telephone infrastructure. The next step is to send the messages from our network to the network we want to reach. To do that, we will connect our network to an Internet Service Provider (ISP). An ISP is a company that manages some special routers that are all linked together and can also access other ISPs' routers. So the message from our network is carried through the network of ISP networks to the destination network. The Internet consists of this whole infrastructure of networks.</p>
 <div class="instructions__image">
-	<img src='../../../img/general/internet-schema-7.png' alt='internet schema'>
+	<img src='internet-schema-7.png' alt='internet schema'>
 </div>
 
 <h2 id="finding-computers">Finding computers</h2>
@@ -296,19 +213,80 @@
                 <nav class="instructions__nav instructions__nav--bottom">
                     <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
                     
-                    <a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
+					<a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
                 </nav>
 
             </div>
 
+		</div>
+		<div class="editor">
+            
+            <div class="editor__input">
+                <div id="inputTab" class="input__tab">
+                    <div id="htmlView" class="tab tab--selected">index.html</div>
+                    <div id="cssView" class="tab">style.css</div>
+                    <div id="jsView" class="tab">script.js</div>
+                </div>
+                <div class="input__container">
+                
+                <div id="textareacontainer">
+                    <div class="textarea">
+                        <div id="textareawrapper">
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;h1&gt;This is a Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        And this
+    &lt;/li&gt;
+    &lt;li&gt;
+        a list
+    &lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;/body&gt;
+&lt;/html&gt;  
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+
+            <div class="editor__output">
+                <div class="output__tab">
+                    <div class="tab tab--selected">Result</div>
+                    <div class="tab">Console</div>
+                </div>
+                <div class="input__container">
+
+                    <div id="iframecontainer">
+                        <div id="iframe">
+                            <div id="iframewrapper">
+                                 <iframe frameborder="0" id="iframeResult" name="iframeResult" allowfullscreen="true"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
         
     </div>
 </main>
 
     
-
-
+<script src="../../../js/codeMirror.js"></script>
+<script src="../../../js/editor.js"></script>
 <script src="../../../js/script.js"></script>
 <script src="../../../js/sticky.js"></script>
 <script src="../../../js/navigation.js"></script>

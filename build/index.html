@@ -31,7 +31,26 @@
 	
 
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
-        
+	
+	<style>
+
+		select{
+			padding: 8px 16px;
+			color: blue;
+		}
+
+		.select__head{
+			font-weight: bold;
+			font-size:14px;
+			color:black;
+		}
+
+		.select__second{
+			text-indent: 5px;
+		}
+	</style>
+    
+    
 </head>
 <body>
 
@@ -58,6 +77,8 @@
     </nav>
 </header>
 <div class="nav__backlayer"></div>
+
+
 
 <main>
 	
@@ -86,6 +107,13 @@
 		
 		
 			
+			
+				
+			
+		
+		
+			
+			
 				
 					<li><a class="drop__exercise" href="./general/intro/background-of-the-web/index.html">background of the web</a></li>
 				
@@ -93,12 +121,14 @@
 		
 		
 			
+			
 				
 					<li><a class="drop__exercise" href="./general/intro/how-does-the-internet-work/index.html">how does the internet work</a></li>
 				
 			
 		
 		
+			
 			
 				
 					<li><a class="drop__exercise" href="./general/intro/the-internet/index.html">the internet</a></li>
@@ -111,117 +141,11 @@
 
 
 
-                            
-
-
-<li class="drop__topic">html</li>
-
-
-
-	
-	<li ><div class="drop__chapter">1 - intro</div></li>
-	
-	
-		
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="./html/intro/html/index.html">html</a></li>
-				
-			
-		
-		
-			
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="./html/intro/test123/index.html">test123</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="./html/intro/why-html/index.html">why html</a></li>
-				
-			  
-		
-	
-
-	
-	<li ><div class="drop__chapter">2 - semantics</div></li>
-	
-	
-		
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="./html/semantics/basic-semantics/index.html">basic semantics</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="./html/semantics/chinese-letter/index.html">chinese letter</a></li>
-				
-			
-		
-		
-			
-				
-					<li><a class="drop__exercise" href="./html/semantics/exercise-quotes/index.html">exercise quotes</a></li>
-				
-			  
-		
-	
-
-	
-	<li ><div class="drop__chapter">3 - test</div></li>
-	
-	
-		
-			<li><div class="drop__sub">1 - positioning</div></li>
-			
-				
-				
-					<li><a class="drop__exercise--sub" href="./html/test/positioning/how/indes">how</a></li>
-				
-			
-				
-				
-					<li><a class="drop__exercise--sub" href="./html/test/positioning/to/indes">to</a></li>
-				
-			
-		
-	
-
-		
-
-
-
                         </ul>
                     </div>
                 </div>
-      
-                
-                    
-                    
-					
-                    
 
-						
-                        
-
-                
-
-                <a class="next" href=""><i class="fas fa-arrow-right"></i></a>
-
+				<a class="next" href=""><i class="fas fa-arrow-right"></i></a>
             </nav>
 
             <div id="insertData" class="instructions__info">
@@ -229,11 +153,11 @@
                 <div id="max"class="resize max"><i class="fas fa-arrows-alt"></i></div>
                 <div id="min"class="resize min"><i class="fas fa-compress-arrows-alt"></i></div>
                 
-				<br>
 
+				
 				<h1 id="general-intro-to-the-course">General Intro to the Course</h1>
 <div class="instructions__image">
-	<img src='./img/home/learntocode.gif' alt='KittenRuler'>
+	<img src='resources/learntocode.gif' alt='KittenRuler'>
 </div>
 
 <h2 id="hello-world">Hello World!</h2>
@@ -248,32 +172,99 @@
 <p>No, you don&rsquo;t. Coding is about trying until it works. So we all start by failing! Get used to it, failure is part of the learning process. Just keep trying, you will make it!</p>
 <h2 id="a-final-word-from-the-team">A final word from the team</h2>
 <div class="instructions__image">
-	<img src='./img/home/welcome.jpg' alt='The team'>
+	<img src='resources/welcome.jpg' alt='The team'>
 </div>
 
 <p>Ready ? Let&rsquo;s go!</p>
 <div class="instructions__image">
-	<img src='./img/home/quit-basketball.gif' alt='The team'>
+	<img src='resources/quit-basketball.gif' alt='The team'>
 </div>
 
 
+                
+                
+                
 
+				
+				
+				
                 <nav class="instructions__nav instructions__nav--bottom">
                     <a class="prev" href=""><i class="fas fa-arrow-left"></i>Previous</a>
                     
-                    <a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
+					<a class="next" href="">Next <i class="fas fa-arrow-right"></i></a>
                 </nav>
 
             </div>
 
+		</div>
+		<div class="editor">
+            
+            <div class="editor__input">
+                <div id="inputTab" class="input__tab">
+                    <div id="htmlView" class="tab tab--selected">index.html</div>
+                    <div id="cssView" class="tab">style.css</div>
+                    <div id="jsView" class="tab">script.js</div>
+                </div>
+                <div class="input__container">
+                
+                <div id="textareacontainer">
+                    <div class="textarea">
+                        <div id="textareawrapper">
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;h1&gt;This is a Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        And this
+    &lt;/li&gt;
+    &lt;li&gt;
+        a list
+    &lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;/body&gt;
+&lt;/html&gt;  
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+
+            <div class="editor__output">
+                <div class="output__tab">
+                    <div class="tab tab--selected">Result</div>
+                    <div class="tab">Console</div>
+                </div>
+                <div class="input__container">
+
+                    <div id="iframecontainer">
+                        <div id="iframe">
+                            <div id="iframewrapper">
+                                 <iframe frameborder="0" id="iframeResult" name="iframeResult" allowfullscreen="true"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
         
     </div>
 </main>
 
     
-
-
+<script src="./js/codeMirror.js"></script>
+<script src="./js/editor.js"></script>
 <script src="./js/script.js"></script>
 <script src="./js/sticky.js"></script>
 <script src="./js/navigation.js"></script>
