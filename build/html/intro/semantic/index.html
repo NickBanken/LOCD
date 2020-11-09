@@ -68,7 +68,7 @@
             <nav class="instructions__nav">
                 <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
                 <div class="dropdown">
-                    <button class="dropdown__btn"><i class="fas fa-bars"></i> The internet</button>
+                    <button class="dropdown__btn"><i class="fas fa-bars"></i> Semantic</button>
                     <div id="dropdownList" class="dropdown__list">
                         <ul>
                             <li class="drop__chapter">0 - Start </li>
@@ -281,55 +281,76 @@
                 
 
 				
-				<h1 id="how-does-the-internet-work">How does the internet work</h1>
-<h1 id="in-short">In short</h1>
-<p>The Internet is the backbone of the Web, the technical infrastructure that makes the Web possible. At its most basic, the Internet is a large network of computers which communicate all together.</p>
-<p>The history of the Internet is somewhat obscure (you can read more about it <a href="../background-of-the-web">here</a>). It began in the 1960s as a US-army-funded research project, then evolved into a public infrastructure in the 1980s with the support of many public universities and private companies. The various technologies that support the Internet have evolved over time, but the way it works hasn&rsquo;t changed that much: Internet is a way to connect computers all together and ensure that, whatever happens, they find a way to stay connected.</p>
-<h1 id="deeper-dive">Deeper Dive</h1>
-<h2 id="a-simple-network">A simple network</h2>
-<p>When two computers need to communicate, you have to link them, either physically (usually with an Ethernet cable) or wirelessly (for example with WiFi or Bluetooth systems). All modern computers can sustain any of those connections.</p>
-<div class="instructions__image">
-	<img src='internet-schema-1.png' alt='internet schema'>
-</div>
+				<h1 id="semantic-html">Semantic HTML</h1>
+<h2 id="why-use-semantics">Why use semantics</h2>
+<p>Semantics are relied on everywhere around us — we rely on previous experience to tell us what the function of an everyday object is; when we see something, we know what its function will be. So, for example, we expect a red traffic light to mean &ldquo;stop&rdquo;, and a green traffic light to mean &ldquo;go&rdquo;. Things can get tricky very quickly if the wrong semantics are applied (Do any countries use red to mean &ldquo;go&rdquo;? I hope not.)</p>
+<h2 id="semantic-html-1">Semantic HTML</h2>
+<p>The HTML5 specification includes several semantic elements to help organize documents. Semantic elements are specifically designed to communicate meaning to the browser, developer, reader, and any other technologies interpreting the document (e.g. voice assistants, screen readers, search engines&hellip;).</p>
+<h3 id="section-elements-in-html5">Section elements in HTML5</h3>
+<ul>
+<li><strong>HTML Navigational Element</strong> (<code>&lt;nav&gt;</code>) defines a section that contains navigation links that appear often on a site. You can have primary and secondary menus, but you never nest, or put a <code>&lt;nav&gt;</code> element inside a <code>&lt;nav&gt;</code> element.</li>
+<li><strong>HTML Article Element</strong> (<code>&lt;article&gt;</code>) defines a piece of self-contained content. It does not refer to the main content alone and can be used for comments and widgets.</li>
+<li><strong>HTML Section Element</strong> (<code>&lt;section&gt;</code>) defines a section of a document to indicate a related grouping of semantic meaning. Utilize the section element providing extra context from the parent element makes sense.</li>
+<li><strong>HTML Aside Element</strong> (<code>&lt;aside&gt;</code>) defines a section that, though related to the main element, doesn&rsquo;t belong to the main flow, like an explanation box or an advertisement. It has its own outline, but doesn&rsquo;t belong to the main one.</li>
+</ul>
+<h3 id="other-semantic-html-elements-used-in-sectioning">Other Semantic HTML elements used in Sectioning</h3>
+<ul>
+<li><strong>HTML Body Element</strong> (<code>&lt;body&gt;</code>) defines all the content of a document. It contains all the content and HTML tags.</li>
+<li><strong>HTML Header Element</strong> (<code>&lt;header&gt;</code>) defines a page which typically contains the logo, title, and navigation. The header can also be used in other semantic elements such as <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code> — or section header, containing perhaps the section&rsquo;s heading, author name, etc. <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;nav&gt;</code> can have their own <code>&lt;header&gt;</code>. Despite its name, it is not necessarily positioned at the beginning of the page or section.</li>
+<li><strong>HTML Footer Element</strong> (<code>&lt;footer&gt;</code>) defines a page footer which typically contains the copyright, legal notices and sometimes some links — or section footer, containing perhaps the section&rsquo;s publication date, license information, etc. <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;nav&gt;</code> can have their own <code>&lt;footer&gt;</code>. Despite its name, it is not necessarily positioned at the end of the page or section.</li>
+</ul>
+<h3 id="example-layout">Example layout</h3>
+<p>The example below is a layout for the body of blog page. There is a <code>&lt;header&gt;</code> with an <code>&lt;h1&gt;</code> element and a <code>&lt;nav&gt;</code> element which contains the navigation links. On the same level as the <code>&lt;header&gt;</code> we have a <code>&lt;section&gt;</code> and <code>&lt;footer&gt;</code> element. The main <code>&lt;section&gt;</code> element has a <code>&lt;h2&gt;</code> title, 2 <code>&lt;articles&gt;</code> and an <code>&lt;aside&gt;</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">header</span>&gt;
+      &lt;<span style="color:#f92672">nav</span>&gt;
+        &lt;<span style="color:#f92672">ul</span>&gt;
+          &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;link&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+          &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;link&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+          &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;link&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+      &lt;/<span style="color:#f92672">nav</span>&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;
+        Page Title
+      &lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;/<span style="color:#f92672">header</span>&gt;
 
-<p>Such a network is not limited to two computers. You can connect as many computers as you wish. But it gets complicated quickly. If you&rsquo;re trying to connect, say, ten computers, you need 45 cables, with nine plugs per computer!</p>
-<div class="instructions__image">
-	<img src='internet-schema-2.png' alt='internet schema'>
-</div>
+    &lt;<span style="color:#f92672">section</span>&gt;
+      &lt;<span style="color:#f92672">h2</span>&gt;
+        My Blog Posts
+      &lt;/<span style="color:#f92672">h2</span>&gt;
+      &lt;<span style="color:#f92672">article</span>&gt;
+        &lt;<span style="color:#f92672">header</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            Article Title
+          &lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;/<span style="color:#f92672">header</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;
+          content
+        &lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;/<span style="color:#f92672">article</span>&gt;
+      &lt;<span style="color:#f92672">article</span>&gt;
+        &lt;<span style="color:#f92672">header</span>&gt;
+          &lt;<span style="color:#f92672">p</span>&gt;
+            Article Title
+          &lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;/<span style="color:#f92672">header</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;
+          content
+        &lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;/<span style="color:#f92672">article</span>&gt;
+      &lt;<span style="color:#f92672">aside</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;
+          Author info
+        &lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;/<span style="color:#f92672">aside</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
 
-<p>To solve this problem, each computer on a network is connected to a special tiny computer called a router. This router has only one job: like a signaler at a railway station, it makes sure that a message sent from a given computer arrives at the right destination computer. To send a message to computer B, computer A must send the message to the router, which in turn forwards the message to computer B and makes sure the message is not delivered to computer C.</p>
-<p>Once we add a router to the system, our network of 10 computers only requires 10 cables: a single plug for each computer and a router with 10 plugs.</p>
-<div class="instructions__image">
-	<img src='internet-schema-3.png' alt='internet schema'>
-</div>
-
-<h2 id="a-network-of-networks">A network of networks</h2>
-<p>So far so good. But what about connecting hundreds, thousands, billions of computers? Of course a single router can&rsquo;t scale that far, but, if you read carefully, we said that a router is a computer like any other, so what keeps us from connecting two routers together? Nothing, so let&rsquo;s do that.</p>
-<div class="instructions__image">
-	<img src='internet-schema-4.png' alt='internet schema'>
-</div>
-
-<p>By connecting computers to routers, then routers to routers, we are able to scale infinitely.</p>
-<div class="instructions__image">
-	<img src='internet-schema-5.png' alt='internet schema'>
-</div>
-
-<p>Such a network comes very close to what we call the Internet, but we&rsquo;re missing something. We built that network for our own purposes. There are other networks out there: your friends, your neighbors, anyone can have their own network of computers. But it&rsquo;s not really possible to set cables up between your house and the rest of the world, so how can you handle this? Well, there are already cables linked to your house, for example, electric power and telephone. The telephone infrastructure already connects your house with anyone in the world so it is the perfect wire we need. To connect our network to the telephone infrastructure, we need a special piece of equipment called a modem. This modem turns the information from our network into information manageable by the telephone infrastructure and vice versa.</p>
-<div class="instructions__image">
-	<img src='internet-schema-6.png' alt='internet schema'>
-</div>
-
-<p>So we are connected to the telephone infrastructure. The next step is to send the messages from our network to the network we want to reach. To do that, we will connect our network to an Internet Service Provider (ISP). An ISP is a company that manages some special routers that are all linked together and can also access other ISPs' routers. So the message from our network is carried through the network of ISP networks to the destination network. The Internet consists of this whole infrastructure of networks.</p>
-<div class="instructions__image">
-	<img src='internet-schema-7.png' alt='internet schema'>
-</div>
-
-<h2 id="finding-computers">Finding computers</h2>
-<p>If you want to send a message to a computer, you have to specify which one. Thus any computer linked to a network has a unique address that identifies it, called an &ldquo;IP address&rdquo; (where IP stands for Internet Protocol). It&rsquo;s an address made of a series of four numbers separated by dots, for example: 192.168.2.10.</p>
-<p>That&rsquo;s perfectly fine for computers, but we human beings have a hard time remembering that sort of address. To make things easier, we can alias an IP address with a human readable name called a domain name. For example (at the time of writing; IP addresses can change) google.com is the domain name used on top of the IP address 173.194.121.32. So using the domain name is the easiest way for us to reach a computer over the Internet.</p>
-<h2 id="internet-and-the-web">Internet and the web</h2>
-<p>As you might notice, when we browse the Web with a Web browser, we usually use the domain name to reach a website. Does that mean the Internet and the Web are the same thing? It&rsquo;s not that simple. As we saw, the Internet is a technical infrastructure which allows billions of computers to be connected all together. Among those computers, some computers (called Web servers) can send messages intelligible to web browsers. The Internet is an infrastructure, whereas the Web is a service built on top of the infrastructure. It is worth noting there are several other services built on top of the Internet, such as email and IRC.</p>
-
+    &lt;<span style="color:#f92672">footer</span>&gt;
+      Copyright Info
+    &lt;/<span style="color:#f92672">footer</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div>
                 
 				
                 <nav class="instructions__nav instructions__nav--bottom">

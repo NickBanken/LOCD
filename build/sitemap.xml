@@ -3,12 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
-    <lastmod>2020-11-02T09:25:04+01:00</lastmod>
+    <loc>/html/basics-of-html/boldcursive/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/semantics/chinese-farmer/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/basics-of-html/images/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/semantics/letter-formatting/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/basics-of-html/lists/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/basics-of-html/paragraphs/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/semantics/recipe-page/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/basics-of-html/relative-links/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/intro/semantic/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/basics-of-html/titles/</loc>
+    <lastmod>2020-11-05T17:23:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/intro/html5-explained/</loc>
+    <lastmod>2020-11-05T17:15:13+01:00</lastmod>
   </url>
   
   <url>
     <loc>/general/intro/background-of-the-web/</loc>
+    <lastmod>2020-11-02T09:25:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/basics-of-html/hello-world/</loc>
+    <lastmod>2020-11-02T09:25:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/html/intro/intro-to-html/</loc>
     <lastmod>2020-11-02T09:25:04+01:00</lastmod>
   </url>
   

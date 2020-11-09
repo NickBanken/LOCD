@@ -8,13 +8,114 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 20 Aug 2020 12:16:17 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Background of the web</title>
-      <link>/about/</link>
-      <pubDate>Mon, 02 Nov 2020 09:25:04 +0100</pubDate>
+      <title>Boldcursive</title>
+      <link>/html/basics-of-html/boldcursive/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
       
-      <guid>/about/</guid>
-      <description>Treeeeee MotherDucker Tim Berners-Lee, a British scientist, invented the World Wide Web (WWW) in 1989, while working at CERN. The web was originally conceived and developed to meet the demand for automated information-sharing between scientists in universities and institutes around the world.
-On 30 April 1993, CERN put the World Wide Web software in the public domain. Later, CERN made a release available with an open licence, a more reliable way to maximise its dissemination.</description>
+      <guid>/html/basics-of-html/boldcursive/</guid>
+      <description>Exercise 4 - Bold Cursive Right now you should have a html document with 6 titles and a paragraph for each title. We can add some extra meaning to the text by adding more html elements. Make use of the &amp;lt;em&amp;gt; and &amp;lt;strong&amp;gt; tags to emphasize one or more words in your text. You will notice that the browser adds some styling to the text wrapped in an &amp;lt;em&amp;gt; or &amp;lt;strong&amp;gt; tag.</description>
+    </item>
+    
+    <item>
+      <title>Chinese-farmer</title>
+      <link>/html/semantics/chinese-farmer/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/semantics/chinese-farmer/</guid>
+      <description>Exercise 3 - Chinese farmer   Translate the html page into semantic html, using the right html tags : h1, h2, blockquote, q, img, img, hr, figure and caption, table, th, tr, td, ul or ol andli.
+  No div or span: they do not provide any semantics.
+  Find, for each of these tags, the origin of their name (that&amp;rsquo;s how we remember them). If in doubt, look for the answer on the documentation.</description>
+    </item>
+    
+    <item>
+      <title>Images</title>
+      <link>/html/basics-of-html/images/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/basics-of-html/images/</guid>
+      <description>Exercise 7 - Images Up until now we have only added different forms of text to your html document. Titles, paragraphs, lists, &amp;hellip; Most websites nowadays are a little more visually pleasing than the black on white textpage we have right now. One way to brighten up your website is by adding images. To do this we use the &amp;lt;img&amp;gt; html element. Unlike the previous tags we have used the &amp;lt;img&amp;gt; tag does not have an opening and closing tag.</description>
+    </item>
+    
+    <item>
+      <title>Letter formatting</title>
+      <link>/html/semantics/letter-formatting/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/semantics/letter-formatting/</guid>
+      <description>Article to HTML Convert the following letter to valid HTML by making use of semantic HTML elements.
+For this project, your task is to mark up a letter that needs to be hosted on a university intranet. The letter is a response from a research fellow to a prospective PhD student concerning their application to the university.
+Block/structural semantics:
+ You should structure the overall document with an appropriate structure including doctype, and &amp;lt;html&amp;gt;, &amp;lt;head&amp;gt; and &amp;lt;body&amp;gt; elements.</description>
+    </item>
+    
+    <item>
+      <title>Lists</title>
+      <link>/html/basics-of-html/lists/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/basics-of-html/lists/</guid>
+      <description>Exercise 5 - Lists Open the index.html file and compare the html code to the output of the document. Identify the 3 different types of lists: ordered, unordered and definition lists. Make sure to check the documentation of these html tags! In the &amp;lt;body&amp;gt; element, add one list of each type with your own content underneath the example lists.
+Starting content &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Exercise 5 - Lists&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;Top 5 things to see in Bangkok&amp;lt;/h1&amp;gt; &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;Royal palace&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Wat Pho&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Floating market&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Baiyoke Sky Hotel&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Chatuchak market&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &amp;lt;h1&amp;gt;unordered list&amp;lt;/h1&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;This&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;is&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;a&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;list&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;that&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;is&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;not&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;ordered&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;h1&amp;gt;Definition list&amp;lt;/h1&amp;gt; &amp;lt;dl&amp;gt; &amp;lt;dt&amp;gt;Water&amp;lt;/dt&amp;gt; &amp;lt;dd&amp;gt;is wet&amp;lt;/dd&amp;gt; &amp;lt;dt&amp;gt;Sand&amp;lt;/dt&amp;gt; &amp;lt;dd&amp;gt;It&amp;#39;s coarse and rough and irritating and it gets everywhere&amp;lt;/dd&amp;gt; &amp;lt;dt&amp;gt;The sky&amp;lt;/dt&amp;gt; &amp;lt;dd&amp;gt;Is blue&amp;lt;/dd&amp;gt; &amp;lt;/dl&amp;gt; &amp;lt;h1&amp;gt;Nested lists&amp;lt;/h1&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; Rock &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;grunge&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;protopunk&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;mathcore&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; EDM &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;fidget house&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;moombahcore&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; level1 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; level2 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; level3 &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;level4&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; ||</description>
+    </item>
+    
+    <item>
+      <title>Paragraphs</title>
+      <link>/html/basics-of-html/paragraphs/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/basics-of-html/paragraphs/</guid>
+      <description>Exercise 3 - Paragraphs Add 6 paragraph elements to the index.html file, one for each title tag. You can write something yourself or copy some placeholder text from here:
+&amp;ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod saepe architecto laborum omnis reiciendis unde et voluptatibus repudiandae eaque quibusdam doloribus officia odit voluptatum minima ab, reprehenderit cupiditate. Consequuntur, sapiente.&amp;rdquo;
+Starting content &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;Exercise 3 - Paragraphs&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; ||</description>
+    </item>
+    
+    <item>
+      <title>Recipe formatting</title>
+      <link>/html/semantics/recipe-page/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/semantics/recipe-page/</guid>
+      <description>Exercise 2 - Recipe formatting
+Add the missing HTML elements to the recipe in the index.html file</description>
+    </item>
+    
+    <item>
+      <title>Relative links</title>
+      <link>/html/basics-of-html/relative-links/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/basics-of-html/relative-links/</guid>
+      <description>Exercise 6 - Relative links The true goal of the web was to have a big network of files connected to each other by hyperlinks, that&amp;rsquo;s why we use the HyperText Markup Language (html). We can achieve this by using the &amp;lt;a&amp;gt; tag, or anchor tag, to link to a different file.
+For the &amp;lt;a&amp;gt; tag to know where to link to, we will have to provide it with some extra information.</description>
+    </item>
+    
+    <item>
+      <title>Semantic</title>
+      <link>/html/intro/semantic/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/intro/semantic/</guid>
+      <description>Semantic HTML Why use semantics Semantics are relied on everywhere around us — we rely on previous experience to tell us what the function of an everyday object is; when we see something, we know what its function will be. So, for example, we expect a red traffic light to mean &amp;ldquo;stop&amp;rdquo;, and a green traffic light to mean &amp;ldquo;go&amp;rdquo;. Things can get tricky very quickly if the wrong semantics are applied (Do any countries use red to mean &amp;ldquo;go&amp;rdquo;?</description>
+    </item>
+    
+    <item>
+      <title>Titles</title>
+      <link>/html/basics-of-html/titles/</link>
+      <pubDate>Thu, 05 Nov 2020 17:23:46 +0100</pubDate>
+      
+      <guid>/html/basics-of-html/titles/</guid>
+      <description>Exercise 2 - Titles Time to start exploring more html elements. Look at the index.html file and the result in the browser. There should be nothing displayed. Add a &amp;lt;h1&amp;gt; element with the text &amp;lsquo;title from an h1 tag&amp;rsquo; and look at the result. There is also an &amp;lt;h2&amp;gt; element, repeat the same process for this tag as well. Continue doing this for all &amp;lt;h#&amp;gt; elements.
+Starting content &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;Exercise 2 - Titles&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; ||</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Explained</title>
+      <link>/html/intro/html5-explained/</link>
+      <pubDate>Thu, 05 Nov 2020 17:15:13 +0100</pubDate>
+      
+      <guid>/html/intro/html5-explained/</guid>
+      <description>First HTML document Index  First HTML document  Index File Extension  Code editors   File Structure    File Extension Your computer knows what application to use to open a certain file by checking the extension of the file. Some examples are:
+ Documents ending in .docx will be opened by Microsoft Word Documents ending in .pdf will be opened with a pdf reader A file ending in .</description>
     </item>
     
     <item>
@@ -25,6 +126,26 @@ On 30 April 1993, CERN put the World Wide Web software in the public domain. Lat
       <guid>/general/intro/background-of-the-web/</guid>
       <description>The internet Birth of the internet Tim Berners-Lee, a British scientist, invented the World Wide Web (WWW) in 1989, while working at CERN. The web was originally conceived and developed to meet the demand for automated information-sharing between scientists in universities and institutes around the world.
 On 30 April 1993, CERN put the World Wide Web software in the public domain. Later, CERN made a release available with an open licence, a more reliable way to maximise its dissemination.</description>
+    </item>
+    
+    <item>
+      <title>Hello world</title>
+      <link>/html/basics-of-html/hello-world/</link>
+      <pubDate>Mon, 02 Nov 2020 09:25:04 +0100</pubDate>
+      
+      <guid>/html/basics-of-html/hello-world/</guid>
+      <description>exercise 1 - Hello world Take a look at the index.html file. At the moment the file is empty. Add all the necesary tags for the base layout of an html document: a doctype, an &amp;lt;html&amp;gt; element and a &amp;lt;head&amp;gt; and &amp;lt;body&amp;gt; element. Be careful though, you can&amp;rsquo;t just place these elements wherever you like. They have a function and should be placed in a specific order. Read the documentation if you&amp;rsquo;re not sure how to use these html elements.</description>
+    </item>
+    
+    <item>
+      <title>Intro to HTML</title>
+      <link>/html/intro/intro-to-html/</link>
+      <pubDate>Mon, 02 Nov 2020 09:25:04 +0100</pubDate>
+      
+      <guid>/html/intro/intro-to-html/</guid>
+      <description>Intro to HTML Why use HTML Computers and by extension web browsers are inherently dumb. We can&amp;rsquo;t expect a computer to read a text document an make a distinction between titles, paragraphs, links, lists, etc.
+Let&amp;rsquo;s put ourselves in the shoes of a computer and take a look at a document you most likely won&amp;rsquo;t understand:
+Just like we can&amp;rsquo;t give meaning to the text in the above example, computers can&amp;rsquo;t give meaning to the data they get from the web.</description>
     </item>
     
     <item>

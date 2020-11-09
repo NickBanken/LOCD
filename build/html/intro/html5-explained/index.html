@@ -68,7 +68,7 @@
             <nav class="instructions__nav">
                 <a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
                 <div class="dropdown">
-                    <button class="dropdown__btn"><i class="fas fa-bars"></i> The internet</button>
+                    <button class="dropdown__btn"><i class="fas fa-bars"></i> HTML5 Explained</button>
                     <div id="dropdownList" class="dropdown__list">
                         <ul>
                             <li class="drop__chapter">0 - Start </li>
@@ -281,54 +281,67 @@
                 
 
 				
-				<h1 id="how-does-the-internet-work">How does the internet work</h1>
-<h1 id="in-short">In short</h1>
-<p>The Internet is the backbone of the Web, the technical infrastructure that makes the Web possible. At its most basic, the Internet is a large network of computers which communicate all together.</p>
-<p>The history of the Internet is somewhat obscure (you can read more about it <a href="../background-of-the-web">here</a>). It began in the 1960s as a US-army-funded research project, then evolved into a public infrastructure in the 1980s with the support of many public universities and private companies. The various technologies that support the Internet have evolved over time, but the way it works hasn&rsquo;t changed that much: Internet is a way to connect computers all together and ensure that, whatever happens, they find a way to stay connected.</p>
-<h1 id="deeper-dive">Deeper Dive</h1>
-<h2 id="a-simple-network">A simple network</h2>
-<p>When two computers need to communicate, you have to link them, either physically (usually with an Ethernet cable) or wirelessly (for example with WiFi or Bluetooth systems). All modern computers can sustain any of those connections.</p>
-<div class="instructions__image">
-	<img src='internet-schema-1.png' alt='internet schema'>
+				<h1 id="first-html-document">First HTML document</h1>
+<h3 id="index">Index</h3>
+<ul>
+<li><a href="#first-html-document">First HTML document</a>
+<ul>
+<li><a href="#index">Index</a></li>
+<li><a href="#file-extension">File Extension</a>
+<ul>
+<li><a href="#code-editors">Code editors</a></li>
+</ul>
+</li>
+<li><a href="#file-structure">File Structure</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="file-extension">File Extension</h2>
+<p>Your computer knows what application to use to open a certain file by checking the extension of the file. Some examples are:</p>
+<ul>
+<li>Documents ending in <strong>.docx</strong> will be opened by <strong>Microsoft Word</strong></li>
+<li>Documents ending in <strong>.pdf</strong> will be opened with a <strong>pdf reader</strong></li>
+<li>A file ending in <strong>.mp3</strong> will be opened with a <strong>music player</strong></li>
+</ul>
+<p>When you write HTML code, you want your code to be read by the <strong>browser</strong>. Your computer will automatically open all files ending in <strong>.html</strong> in the browser. The browser will then convert the HTML code inside the document to a human-readable webpage.</p>
+<p>If you want to view the pure HTML code, you will have to use a different type of application to open these documents: a <strong>code editor</strong>.</p>
+<h3 id="code-editors">Code editors</h3>
+<p>You could use the default text editor that is installed on your computer to write your HTML files. On Windows for example there is Notepad. That would work perfectly fine as long as you don&rsquo;t write any errors in your HTML code and save it as a <strong>.html</strong> file.</p>
+<p>There are also applications created specifically to write code. These applications have built-in functionalities such as code highlighting, indentation of your code, autocomplete, etc. which help a lot with writing code efficiently.</p>
+<h2 id="file-structure">File Structure</h2>
+<p><div class="instructions__image">
+	<img src='html.png' alt='first-html'>
 </div>
 
-<p>Such a network is not limited to two computers. You can connect as many computers as you wish. But it gets complicated quickly. If you&rsquo;re trying to connect, say, ten computers, you need 45 cables, with nine plugs per computer!</p>
-<div class="instructions__image">
-	<img src='internet-schema-2.png' alt='internet schema'>
-</div>
-
-<p>To solve this problem, each computer on a network is connected to a special tiny computer called a router. This router has only one job: like a signaler at a railway station, it makes sure that a message sent from a given computer arrives at the right destination computer. To send a message to computer B, computer A must send the message to the router, which in turn forwards the message to computer B and makes sure the message is not delivered to computer C.</p>
-<p>Once we add a router to the system, our network of 10 computers only requires 10 cables: a single plug for each computer and a router with 10 plugs.</p>
-<div class="instructions__image">
-	<img src='internet-schema-3.png' alt='internet schema'>
-</div>
-
-<h2 id="a-network-of-networks">A network of networks</h2>
-<p>So far so good. But what about connecting hundreds, thousands, billions of computers? Of course a single router can&rsquo;t scale that far, but, if you read carefully, we said that a router is a computer like any other, so what keeps us from connecting two routers together? Nothing, so let&rsquo;s do that.</p>
-<div class="instructions__image">
-	<img src='internet-schema-4.png' alt='internet schema'>
-</div>
-
-<p>By connecting computers to routers, then routers to routers, we are able to scale infinitely.</p>
-<div class="instructions__image">
-	<img src='internet-schema-5.png' alt='internet schema'>
-</div>
-
-<p>Such a network comes very close to what we call the Internet, but we&rsquo;re missing something. We built that network for our own purposes. There are other networks out there: your friends, your neighbors, anyone can have their own network of computers. But it&rsquo;s not really possible to set cables up between your house and the rest of the world, so how can you handle this? Well, there are already cables linked to your house, for example, electric power and telephone. The telephone infrastructure already connects your house with anyone in the world so it is the perfect wire we need. To connect our network to the telephone infrastructure, we need a special piece of equipment called a modem. This modem turns the information from our network into information manageable by the telephone infrastructure and vice versa.</p>
-<div class="instructions__image">
-	<img src='internet-schema-6.png' alt='internet schema'>
-</div>
-
-<p>So we are connected to the telephone infrastructure. The next step is to send the messages from our network to the network we want to reach. To do that, we will connect our network to an Internet Service Provider (ISP). An ISP is a company that manages some special routers that are all linked together and can also access other ISPs' routers. So the message from our network is carried through the network of ISP networks to the destination network. The Internet consists of this whole infrastructure of networks.</p>
-<div class="instructions__image">
-	<img src='internet-schema-7.png' alt='internet schema'>
-</div>
-
-<h2 id="finding-computers">Finding computers</h2>
-<p>If you want to send a message to a computer, you have to specify which one. Thus any computer linked to a network has a unique address that identifies it, called an &ldquo;IP address&rdquo; (where IP stands for Internet Protocol). It&rsquo;s an address made of a series of four numbers separated by dots, for example: 192.168.2.10.</p>
-<p>That&rsquo;s perfectly fine for computers, but we human beings have a hard time remembering that sort of address. To make things easier, we can alias an IP address with a human readable name called a domain name. For example (at the time of writing; IP addresses can change) google.com is the domain name used on top of the IP address 173.194.121.32. So using the domain name is the easiest way for us to reach a computer over the Internet.</p>
-<h2 id="internet-and-the-web">Internet and the web</h2>
-<p>As you might notice, when we browse the Web with a Web browser, we usually use the domain name to reach a website. Does that mean the Internet and the Web are the same thing? It&rsquo;s not that simple. As we saw, the Internet is a technical infrastructure which allows billions of computers to be connected all together. Among those computers, some computers (called Web servers) can send messages intelligible to web browsers. The Internet is an infrastructure, whereas the Web is a service built on top of the infrastructure. It is worth noting there are several other services built on top of the Internet, such as email and IRC.</p>
+<em>example of a simple html document</em></p>
+<p>Let&rsquo;s take a look at the above example of an HTML document.</p>
+<ul>
+<li>
+<p><code>&lt;!DOCTYPE html&gt;</code><br>
+The first line of a html document starts with the doctype declaration. This line tells the browser what version of html you are using.</p>
+</li>
+<li>
+<p><code>&lt;html&gt;...&lt;/html&gt;</code><br>
+All your html code will be placed inside the html element. The html element consists of an opening tag: <code>&lt;html&gt;</code>, and a closing tag: <code>&lt;/html&gt;</code>.</p>
+</li>
+<li>
+<p><code>&lt;head&gt;...&lt;/head&gt;&lt;body&gt;...&lt;/body&gt;</code><br>
+Inside the html element we have a <strong>head</strong> and a <strong>body</strong> element. 
+The <code>head</code> element contains information about the document. It will not be visible to the human consulting your web page. The <code>body</code> element contains the actual content that will be visible on the website.</p>
+</li>
+<li>
+<p><code>&lt;title&gt;...&lt;/title&gt;</code><br>
+The <strong>title</strong> element is part of the <strong>head</strong>. As the name suggests, it contains the title for the html page.</p>
+</li>
+<li>
+<p><code>&lt;h1&gt;...&lt;/h1&gt;</code><br>
+The <strong>h1</strong> element is placed in the <strong>body</strong> of the document. It is one of the 6 section headers in html. (h1-h6). &ldquo;h&rdquo; stands for &ldquo;headline&rdquo;.</p>
+</li>
+<li>
+<p><code>&lt;p&gt;...&lt;/p&gt;</code><br>
+The <strong>p</strong> element or paragraph element is used to display text.</p>
+</li>
+</ul>
 
                 
 				
