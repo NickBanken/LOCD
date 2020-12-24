@@ -2,6 +2,8 @@ let max = document.getElementById('max');
 let min = document.getElementById('min');
 
 let editorView = document.querySelector('.editor');
+let instructionsView = document.querySelector('.instructions');
+
 let input = document.querySelector('.editor__input');
 let output = document.querySelector('.editor__output');
 let main = document.querySelector('main');
@@ -9,33 +11,19 @@ let main = document.querySelector('main');
 let viewport = document.getElementById('viewport');
 let insertView = document.querySelector('#insertData');
 
-let stylesheet = document.getElementById("maxViewer");
-
-stylesheet.disabled = true;
-
-
 max.addEventListener("click", ()=>{
-
 	max.style.display = "none";
 	min.style.display = "inline-block";
 	stylesheet.disabled = false;
-
-	// let head = document.querySelector("head");
-
-	// let link = document.createElement('link');
-	// link.rel = 'stylesheet';
-	// link.type = 'text/css';
-	// link.href = root+'/css/max-screen.css';
-	// link.id = 'maxViewer';
-	// link.media = "(min-width: 1000px)";
+	sessionStorage.setItem('maxScreen', true);
 })
 
 
 min.addEventListener("click", ()=>{
-	
 	max.style.display = "inline-block";
 	min.style.display = "none";
 
+	sessionStorage.removeItem('maxScreen');
 	stylesheet.disabled = true;
 })
 
@@ -46,8 +34,6 @@ for(let i = 0; i < inputView.length; i++){
 	let result = inputView[i];
 	console.log(result)
 }
-
-
 
 
 let maxIcon = document.getElementById("max");
@@ -63,9 +49,67 @@ parent.addEventListener('scroll', function(e) {
 })
 
 document.getElementById("instructionsButton").addEventListener("click",()=>{
-	viewport.classList.remove("viewport--editor")
+	instructionsView.classList.remove("instructions--max")
+	editorView.classList.remove("editor--max")
 })
 
 document.getElementById("editorButton").addEventListener("click",()=>{
-	viewport.classList.add("viewport--editor")
+	instructionsView.classList.add("instructions--max")
+	editorView.classList.add("editor--max")
 })
+
+
+
+//Navigation code
+
+let btn = document.querySelector('.dropdown__btn');
+
+btn.addEventListener('click',myFunction)
+
+function myFunction() {
+	document.getElementById("dropdownList").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+	if (!event.target.matches('.dropdown__btn')) {
+	  var dropdowns = document.getElementsByClassName("dropdown__list");
+	  var i;
+	  for (i = 0; i < dropdowns.length; i++) {
+		var openDropdown = dropdowns[i];
+		
+		if (openDropdown.classList.contains('show')) {
+		  openDropdown.classList.remove('show');
+		}
+	  }
+	}
+  }
+
+//################## Arrow navigation ###################
+
+  let links = document.querySelectorAll(".dropdown__list ul > li a");
+
+	for(let i=0; i<links.length; i++){
+		// added + "index.html" because on the server they open the folder and read the file.
+		if(JSON.stringify(links[i].href+"index.html").includes(window.location.pathname)){
+			console.log(links[i].href , window.location.pathname)
+			setNavArrow(links,i-1,".prev")
+			setNavArrow(links,i+1,".next")
+			links[i].classList.add("current")
+			break;
+		}
+	}
+
+
+	function setNavArrow(arr,index,query){
+		let arrowArr = document.querySelectorAll(query);
+		if(!arr[index]){
+			arrowArr.forEach(el=>{
+				el.classList.add("disabled");
+			})
+		}else{
+			arrowArr.forEach(el=>{
+				el.href = arr[index];
+			})
+		}
+	}

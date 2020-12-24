@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn offline coding by doing</title>
-    <link rel="stylesheet" href="../../../fontawesome/css/all.css">
-	<link rel="icon" href="../../../img/locdfavicon.png" type="image/x-icon">
-	
-	<script src="../../../js/setup.js"></script>
-
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learn offline coding by doing</title>
+        <link rel="stylesheet" href="../../../fontawesome/css/all.css">
+        <link rel="icon" href="../../../img/locdfavicon.png" type="image/x-icon">    
     
-
-    <link rel="stylesheet" href="../../../codemirror/lib/codemirror.css">
-	<link rel="stylesheet" href="../../../codemirror/theme/locd-dark.css">
-	<link rel="stylesheet" href="../../../codemirror/addon/hint/show-hint.css">
-
+        
     
-    <script src="../../../codemirror/lib/codemirror.js"></script>
-    <script src="../../../codemirror/mode/javascript/javascript.js"></script>
-    <script src="../../../codemirror/mode/css/css.js"></script>
-    <script src="../../../codemirror/mode/xml/xml.js"></script>
-	<script src="../../../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="../../../codemirror/lib/codemirror.css">
+        <link rel="stylesheet" href="../../../codemirror/theme/locd-dark.css">
+        <link rel="stylesheet" href="../../../codemirror/addon/hint/show-hint.css">
+    
+    
+        
+        <script src="../../../codemirror/lib/codemirror.js"></script>
+        <script src="../../../codemirror/mode/javascript/javascript.js"></script>
+        <script src="../../../codemirror/mode/css/css.js"></script>
+        <script src="../../../codemirror/mode/xml/xml.js"></script>
+        <script src="../../../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    
+        <script src="../../../codemirror/addon/hint/show-hint.js"></script>
+        <script src="../../../codemirror/addon/hint/xml-hint.js"></script>
+        <script src="../../../codemirror/addon/hint/html-hint.js"></script>
+        <script src="../../../js/split.js"></script>
+        
+    
+        <link rel="stylesheet" type="text/css" href="../../../css/main.css">
+        <link id="maxViewer" href="../../../css/max-screen.css" rel="stylesheet" disabled>
+        <link media="(max-width: 1000px)" href="../../../css/max-screen.css" rel="stylesheet">
+        <link media="(max-width: 1000px)" href="../../../css/small-screen.css" rel="stylesheet">
+    
+        <script>
+            let stylesheet = document.getElementById("maxViewer");
 
-	<script src="../../../codemirror/addon/hint/show-hint.js"></script>
-	<script src="../../../codemirror/addon/hint/xml-hint.js"></script>
-	<script src="../../../codemirror/addon/hint/html-hint.js"></script>
-	<script src="../../../js/split.js"></script>
-	
+            stylesheet.disabled = true;
 
-	<link rel="stylesheet" type="text/css" href="../../../css/main.css">
-	<link id="maxViewer" href="../../../css/max-screen.css" rel="stylesheet">
-
-	<link media="(max-width: 1000px)" href="../../../css/max-screen.css" rel="stylesheet">
-	<link media="(max-width: 1000px)" href="../../../css/small-screen.css" rel="stylesheet">
-	   
-</head>
+            if(sessionStorage.getItem('maxScreen') == "true"){
+                stylesheet.disabled = false;
+            }
+        </script>
+    </head>
 <body>
 
     
@@ -78,6 +84,19 @@
 	</nav>
 	
     <div id="viewport" class="viewport">
+        <div class="reset">
+            <div class="reset__confirm">
+                <p>You are about to reset from scratch, are you sure you want to do this?</p>
+                <div class="reset__selection">
+                    <button id="reset__selection--accept">Yes</button>
+                    <button id="reset__selection--decline">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="successMessage">
+            <p>Save successfull!</p>
+        </div>
         <div class="instructions">
             <nav class="instructions__nav">
 				<div class="nav__wrapper">
@@ -395,18 +414,24 @@ In the <code>&lt;body&gt;</code> element, add one list of each type with your ow
 		</div>
 		<div class="editor">
             
+
             <div class="editor__input">
                 <div id="inputTab" class="input__tab">
                     <div id="htmlView" class="tab tab--selected">index.html</div>
-                    <div id="cssView" class="tab">style.css</div>
-                    <div id="jsView" class="tab">script.js</div>
+                    
+                    
+                    <button id="saveButton" class="editorButton editorButton__saveButton">Save</button>
+                    <button id="resetButton" class="editorButton editorButton__resetButton">Reset</button>
                 </div>
                 <div class="input__container">
                 
                 <div id="textareacontainer">
                     <div class="textarea">
                         <div id="textareawrapper">
-                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false">
+                             
+                             <div class="overlay__editor"></div>
+
+                            <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&#34;en&#34;&gt;
   &lt;head&gt;
@@ -489,7 +514,7 @@ In the <code>&lt;body&gt;</code> element, add one list of each type with your ow
             <div class="editor__output">
                 <div class="output__tab">
                     <div class="tab tab--selected">Result</div>
-                    <div class="tab">Console</div>
+                    
                 </div>
                 <div class="input__container">
 
@@ -509,11 +534,72 @@ In the <code>&lt;body&gt;</code> element, add one list of each type with your ow
     </div>
 </main>
 
+<script>
+
+    let saveButton = document.getElementById("saveButton");
+    let resetButton = document.getElementById("resetButton");
+
+    saveButton.addEventListener("click",saveEditor);
+    resetButton.addEventListener("click",resetEditor);
+
+    function saveEditor(){
+        let myContent = document.getElementById("textareaCode").value;
+        messagePop("Succesfully saved!");
+        localStorage.setItem("Lists",myContent);
+    }
+
+    function loadEditor(){
+        let content = localStorage.getItem("Lists");
+        if(content){
+            document.getElementById("textareaCode").value = content;
+        }
+    }
+
+    function resetEditor(){
+        let resetModal = document.querySelector(".reset");
+        let confirmButtons = resetModal.querySelector('.reset__selection')
+        let acceptButton = confirmButtons.firstElementChild;
+        let declineButton = confirmButtons.lastElementChild;
+
+        resetModal.style = "display:block";
+
+        acceptButton.addEventListener("click",()=>{
+            let myContent = document.getElementById("textareaCode").value;
+            messagePop("Succesfully reset!");
+            window.editor.setValue("\n\u003c!DOCTYPE html\u003e\r\n\u003chtml lang=\"en\"\u003e\r\n  \u003chead\u003e\r\n    \u003ctitle\u003eExercise 5 - Lists\u003c/title\u003e\r\n  \u003c/head\u003e\r\n  \u003cbody\u003e\r\n    \u003ch1\u003eTop 5 things to see in Bangkok\u003c/h1\u003e\r\n    \u003col\u003e\r\n      \u003cli\u003eRoyal palace\u003c/li\u003e\r\n      \u003cli\u003eWat Pho\u003c/li\u003e\r\n      \u003cli\u003eFloating market\u003c/li\u003e\r\n      \u003cli\u003eBaiyoke Sky Hotel\u003c/li\u003e\r\n      \u003cli\u003eChatuchak market\u003c/li\u003e\r\n    \u003c/ol\u003e\r\n    \u003ch1\u003eunordered list\u003c/h1\u003e\r\n    \u003cul\u003e\r\n      \u003cli\u003eThis\u003c/li\u003e\r\n      \u003cli\u003eis\u003c/li\u003e\r\n      \u003cli\u003ea\u003c/li\u003e\r\n      \u003cli\u003elist\u003c/li\u003e\r\n      \u003cli\u003ethat\u003c/li\u003e\r\n      \u003cli\u003eis\u003c/li\u003e\r\n      \u003cli\u003enot\u003c/li\u003e\r\n      \u003cli\u003eordered\u003c/li\u003e\r\n    \u003c/ul\u003e\r\n    \u003ch1\u003eDefinition list\u003c/h1\u003e\r\n    \u003cdl\u003e\r\n      \u003cdt\u003eWater\u003c/dt\u003e\r\n      \u003cdd\u003eis wet\u003c/dd\u003e\r\n      \u003cdt\u003eSand\u003c/dt\u003e\r\n      \u003cdd\u003eIt's coarse and rough and irritating and it gets everywhere\u003c/dd\u003e\r\n      \u003cdt\u003eThe sky\u003c/dt\u003e\r\n      \u003cdd\u003eIs blue\u003c/dd\u003e\r\n    \u003c/dl\u003e\r\n    \u003ch1\u003eNested lists\u003c/h1\u003e\r\n    \u003cul\u003e\r\n      \u003cli\u003e\r\n        Rock\r\n        \u003cul\u003e\r\n          \u003cli\u003egrunge\u003c/li\u003e\r\n          \u003cli\u003eprotopunk\u003c/li\u003e\r\n          \u003cli\u003emathcore\u003c/li\u003e\r\n        \u003c/ul\u003e\r\n      \u003c/li\u003e\r\n      \u003cli\u003e\r\n        EDM\r\n        \u003cul\u003e\r\n          \u003cli\u003efidget house\u003c/li\u003e\r\n          \u003cli\u003emoombahcore\u003c/li\u003e\r\n        \u003c/ul\u003e\r\n      \u003c/li\u003e\r\n    \u003c/ul\u003e\r\n    \u003cul\u003e\r\n      \u003cli\u003e\r\n        level1\r\n        \u003cul\u003e\r\n          \u003cli\u003e\r\n            level2\r\n            \u003cul\u003e\r\n              \u003cli\u003e\r\n                level3\r\n                \u003cul\u003e\r\n                  \u003cli\u003elevel4\u003c/li\u003e\r\n                \u003c/ul\u003e\r\n              \u003c/li\u003e\r\n            \u003c/ul\u003e\r\n          \u003c/li\u003e\r\n        \u003c/ul\u003e\r\n      \u003c/li\u003e\r\n    \u003c/ul\u003e\r\n  \u003c/body\u003e\r\n\u003c/html\u003e");
+            localStorage.removeItem("Lists");
+            submitTryit();
+            resetModal.style = "display:none";
+        })
+
+        declineButton.addEventListener("click",()=>{
+            resetModal.style = "display:none"
+        })
+
+        resetModal.addEventListener('click',()=>{
+            if(!resetModal.firstElementChild.contains(event.target)){
+                resetModal.style = "display:none"
+            }
+        })
+    }
+
+    function messagePop(text){
+        let message = document.querySelector(".successMessage");
+        console.log(message.firstElementChild.innerHTML = text)
+        message.classList.add("activeMessage");
+
+        message.addEventListener('animationend', () => {
+            message.classList.remove("activeMessage");
+        });
+    }
+
+    loadEditor();
+</script>
+
     
 <script src="../../../js/codeMirror.js"></script>
 <script src="../../../js/editor.js"></script>
 <script src="../../../js/script.js"></script>
-<script src="../../../js/sticky.js"></script>
 <script src="../../../js/navigation.js"></script>
 </body>
 </html>
