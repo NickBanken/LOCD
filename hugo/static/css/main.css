@@ -8,6 +8,14 @@ body {
   padding: 0;
   box-sizing: inherit; }
 
+button {
+  border: none;
+  cursor: pointer; }
+  button:focus {
+    outline: none; }
+  button:active {
+    border: red; }
+
 :root {
   --nav-height:7rem;
   --sidebar-large-w:48rem; }
@@ -88,6 +96,12 @@ nav {
 
 pre {
   overflow: auto; }
+
+button {
+  padding: 20px 80px;
+  font-size: 1.4rem; }
+  button:hover {
+    background-color: #d1d1d1; }
 
 header {
   background-color: #15141F;
@@ -313,6 +327,84 @@ li {
   width: 100%;
   height: 100%; }
 
+.successMessage {
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0 -4px 10px 0px rgba(0, 0, 0, 0.5);
+  opacity: 100;
+  z-index: 100;
+  position: absolute;
+  right: 50%;
+  top: 5%;
+  transform: translateX(50%);
+  height: 80px;
+  width: 200px;
+  background-color: white; }
+  .successMessage p {
+    text-align: center;
+    line-height: 80px;
+    font-size: 1.5rem;
+    color: green; }
+
+.activeMessage {
+  display: block;
+  animation-name: messagePopUp;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out; }
+
+.reset {
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+  .reset__confirm {
+    border-radius: 5px;
+    box-shadow: 0 -4px 10px 0px rgba(0, 0, 0, 0.5);
+    opacity: 100;
+    z-index: 100;
+    position: absolute;
+    right: 50%;
+    top: 5%;
+    transform: translateX(50%);
+    height: 250px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 40px; }
+    .reset__confirm p {
+      margin-top: 40px;
+      font-size: 1.8rem; }
+    .reset__confirm button:hover {
+      background-color: #d1d1d1; }
+  .reset__selection {
+    margin-top: 20px; }
+    .reset__selection :first-child {
+      margin-right: 10px; }
+    .reset__selection :last-child {
+      margin-left: 10px; }
+    .reset__selection > * {
+      padding: 10px 40px;
+      border-radius: 5px; }
+
+@keyframes messagePopUp {
+  0% {
+    opacity: 0;
+    top: -5%; }
+  30% {
+    opacity: 1;
+    top: 8%; }
+  70% {
+    opacity: 1;
+    top: 8%; }
+  100% {
+    opacity: 0;
+    top: -5%; } }
+
 .editor {
   height: calc(100vh - var(--nav-height));
   display: flex;
@@ -355,6 +447,14 @@ li {
     font-size: 1.5rem;
     color: #FF5606; }
 
+.editorButton {
+  padding: 0 80px;
+  border: none; }
+  .editorButton__saveButton {
+    margin-left: auto;
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1; }
+
 #textareacontainer, .textarea, #textareawrapper, #iframecontainer, #iframe
 , #iframewrapper, iframe {
   height: 100%;
@@ -373,9 +473,22 @@ iframe {
   height: 100%; }
 
 .CodeMirror {
-  padding: 10px;
   height: 100%;
   font-size: 14px; }
+
+.emmet-abbreviation-preview {
+  z-index: 9; }
+
+#textareawrapper {
+  position: relative; }
+
+.overlay__editor {
+  position: absolute;
+  background-color: #333333;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
 .maxscreen-nav {
   position: absolute;
