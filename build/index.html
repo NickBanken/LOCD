@@ -54,6 +54,11 @@
     <nav class="nav">
         <a href="./" class="nav__logo"></a>
 
+        <input class="menu__btn" type="checkbox" id="menu__btn" />
+        <label class="menu__icon" for="menu__btn">
+            <span class="nav__icon"></span>
+        </label>
+
         <ul class="nav__menu">
             <li>
                 <a href="#">Practice</a>
@@ -68,9 +73,27 @@
                 <a href="#">About</a>
             </li>
         </ul>
+
+        
     </nav>
 </header>
 <div class="nav__backlayer"></div>
+<nav>
+    <ul class="nav__menu--hamburger">
+        <li>
+            <a href="#">Practice</a>
+        </li>
+        <li>
+            <a href="#">Documentation</a>
+        </li>
+        <li>
+            <a href="#">Help</a>
+        </li>
+        <li>
+            <a href="#">About</a>
+        </li>
+    </ul>
+</nav>  
 
 
 
@@ -418,6 +441,7 @@
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
+        submitTryit();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem("Home",myContent);
@@ -474,7 +498,6 @@
 <script src="./js/codeMirror.js"></script>
 <script src="./js/editor.js"></script>
 <script src="./js/script.js"></script>
-<script src="./js/navigation.js"></script>
 
 </body>
 </html>

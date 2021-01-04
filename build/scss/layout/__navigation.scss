@@ -1,25 +1,25 @@
+// top navigation
 header{
     background-color: #15141F;
     position: relative;
     z-index: 11;
 }
 
+
 .nav{
-    
     display: flex;
     justify-content: space-between;
-
     padding: 0.5rem;
     margin: 0 6rem;
     height: var(--nav-height);
+    max-height: none;
     
-
+   
     &__logo{
         background-image: url('../img/locdLogo.png');
         display: inline-block;
         height: 6rem;
         width: 15rem;
-        
         background-size: auto 100%;
         background-position: left center;
         background-repeat: no-repeat;
@@ -29,11 +29,45 @@ header{
         display: flex;
         align-items: center;
         list-style: none;
+        transition: all .2s ease-out;
+
+        @media (max-width: 1000px){
+            display: none;
+        }
 
         &>*{
             margin-left:40px ;
-
+           
+            @media (max-width: 1000px){
+                padding: 1.2rem;
+            }
         }
+
+        &--hamburger{
+            background-color: #15141F;
+            text-decoration: none;
+            padding-top: 25px;
+            display: none;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            transform: translateY(-500px);
+            transition: 0.5s transform ease-in-out;
+
+            li{
+                padding: 20px;
+            }
+
+            @media (max-width: 1000px){
+                display: block;
+            }
+
+            &.burger--active{
+                transform: translateY(0px);
+            }
+        }
+
+        
     }
 
     &__backlayer{
@@ -46,6 +80,84 @@ header{
         box-shadow: 0px 0px 10px 5px $color-grey-dark-3;
     }
 }
+
+.menu__icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    display: none;
+  }
+
+  .nav__icon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+
+.nav__icon:before,
+.nav__icon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.menu__icon .nav__icon:before {
+  top: 5px;
+}
+
+.menu__icon .nav__icon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.menu__btn {
+  display: none;
+}
+
+.menu__btn:checked ~ .menu__icon .nav__icon {
+  background: transparent;
+}
+
+.menu__btn:checked ~ .menu__icon .nav__icon:before {
+  transform: rotate(-45deg);
+}
+
+.menu__btn:checked ~ .menu__icon .nav__icon:after {
+  transform: rotate(45deg);
+}
+
+.menu__btn:checked ~ .menu__icon:not(.steps) .nav__icon:before,
+.menu__btn:checked ~ .menu__icon:not(.steps) .nav__icon:after {
+  top: 0;
+}
+
+
+@media (max-width: 1000px) {
+
+    .menu__btn:checked ~ .nav__menu {
+        // height: 240px;
+        height: 100%;
+        max-height: 240px;
+        transition: all .2s ease-out;
+    }
+    .menu__icon {
+        display: block;
+    }
+
+ 
+}
+
 
 .dropdown{
 
@@ -63,6 +175,10 @@ header{
         outline: none;
         width: 100%;
         text-align: start;
+
+        &:hover{
+            background-color: $color-grey-dark-3;
+        }
     }
 
     &__list{
@@ -164,10 +280,36 @@ li{
     color:white;
 }
 
-
+> button:first-child{
+        margin-right: 1rem;
+    }
 .disabled {
 	pointer-events: none;
 	cursor: default;
 	color:grey;
 }
+
+.view-navigation{
+    width: 100%;
+    text-align:center;
+
+
+    > button{
+        display:inline-block;
+        padding:1rem 4rem;
+        color:$color-grey-dark;
+        margin: 0 1rem 1rem 0;
+        border-radius:0.3rem;
+        text-decoration:none;
+        
+        @media only screen and (max-width: 550px) {
+            display: block;
+            margin: 0.4em auto;
+            width: 100%;
+            padding:1rem 2rem;
+        }
+    }
+}
+
+
 
