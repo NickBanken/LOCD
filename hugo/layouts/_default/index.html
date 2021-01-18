@@ -72,21 +72,6 @@
                 <a href="#">About</a>
             </li>
         </ul>
-
-        <!-- <ul class="nav__menu--burger">
-            <li>
-                <a href="#">Practice</a>
-            </li>
-            <li>
-                <a href="#">Documentation</a>
-            </li>
-            <li>
-                <a href="#">Help</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-        </ul> -->
     </nav>
 </header>
 <div class="nav__backlayer"></div>
@@ -201,7 +186,7 @@
                                 <!--Dirty way to hide the load time of codemirror-->
                                 <div class="overlay__editor"></div>
 
-								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none"></textarea>
+								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">{{ partial "editor/general/editor"}}</textarea>
 							</div>
 						</div>
 					</div>
@@ -229,7 +214,12 @@
 </main>
 
 <script>
-
+    //handle bar in the editor to increase the viewports.
+    Split([".editor__input", ".editor__output"], {
+    direction: "vertical",
+    gutterSize: 15,
+    });
+    
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
 
@@ -237,7 +227,7 @@
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
-        submitTryit();
+        viewContent();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem({{.Title}},myContent);
@@ -263,7 +253,7 @@
             messagePop("Succesfully reset!");
             window.editor.setValue({{ partial "editor/general/editor"}});
             localStorage.removeItem({{.Title}});
-            submitTryit();
+            viewContent();
             resetModal.style = "display:none";
         })
 

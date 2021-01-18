@@ -7,30 +7,31 @@
         <link rel="stylesheet" href="{{.Site.BaseURL}}/fontawesome/css/all.css">
         <link rel="icon" href="{{.Site.BaseURL}}/img/locdfavicon.png" type="image/x-icon">    
     
-        <!--START EDITOR LINKS-->
-    
+         <!--START EDITOR LINKS-->
+
         <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/lib/codemirror.css">
         <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/theme/locd-dark.css">
-        <link rel="stylesheet" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
-    
-    
+
+
         <!-- <script src="codemirror/mode/xml/xml.js"></script> -->
         <script src="{{.Site.BaseURL}}/codemirror/lib/codemirror.js"></script>
         <script src="{{.Site.BaseURL}}/codemirror/mode/javascript/javascript.js"></script>
         <script src="{{.Site.BaseURL}}/codemirror/mode/css/css.js"></script>
         <script src="{{.Site.BaseURL}}/codemirror/mode/xml/xml.js"></script>
         <script src="{{.Site.BaseURL}}/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    
-        <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
-        <script src="{{.Site.BaseURL}}/codemirror/addon/hint/xml-hint.js"></script>
-        <script src="{{.Site.BaseURL}}/codemirror/addon/hint/html-hint.js"></script>
+
         <script src="{{.Site.BaseURL}}/js/split.js"></script>
+        <script src="{{.Site.BaseURL}}/js/emmet.js"></script>
         
-    
+
         <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/css/main.css">
         <link id="maxViewer" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet" disabled>
-        <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
+        <link media="(max-width: 1000px)"  href="{{.Site.BaseURL}}/css/max-screen.css" rel="stylesheet">
         <link media="(max-width: 1000px)" href="{{.Site.BaseURL}}/css/small-screen.css" rel="stylesheet">
+
+        <script src="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.js"></script>
+        <script src="{{.Site.BaseURL}}/codemirror/addon/hint/css-hint.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}/codemirror/addon/hint/show-hint.css">
     
         <script>
             let stylesheet = document.getElementById("maxViewer");
@@ -40,17 +41,42 @@
             if(sessionStorage.getItem('maxScreen') == "true"){
                 stylesheet.disabled = false;
             }
+            
         </script>
+        
     </head>
 <body>
 
     
 	
-<header>
-    <nav class="nav">
-        <a href="/" class="nav__logo"></a>
-
-        <ul class="nav__menu">
+    <header>
+        <nav class="nav">
+            <a href="/" class="nav__logo"></a>
+    
+            <input class="menu__btn" type="checkbox" id="menu__btn" />
+            <label class="menu__icon" for="menu__btn">
+                <span class="nav__icon"></span>
+            </label>
+    
+            <ul class="nav__menu">
+                <li>
+                    <a href="#">Practice</a>
+                </li>
+                <li>
+                    <a href="#">Documentation</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="nav__backlayer"></div>
+    <nav>
+        <ul class="nav__menu--hamburger">
             <li>
                 <a href="#">Practice</a>
             </li>
@@ -64,9 +90,7 @@
                 <a href="#">About</a>
             </li>
         </ul>
-    </nav>
-</header>
-<div class="nav__backlayer"></div>
+    </nav>  
 
 {{ $content_parts := split .Content "<p>||</p>" }}
 
@@ -188,7 +212,12 @@
 </main>
 
 <script>
-
+    //handle bar in the editor to increase the viewports.
+    Split([".editor__input", ".editor__output"], {
+    direction: "vertical",
+    gutterSize: 15,
+    });
+    
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
 
@@ -196,6 +225,7 @@
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
+        viewContent();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem({{.Title}},myContent);
@@ -219,9 +249,9 @@
         acceptButton.addEventListener("click",()=>{
             let myContent = document.getElementById("textareaCode").value;
             messagePop("Succesfully reset!");
-            window.editor.setValue({{ index $content_parts 1 | safe.HTML }});
+            window.editor.setValue({{  index $content_parts 1 | safe.HTML }});
             localStorage.removeItem({{.Title}});
-            submitTryit();
+            viewContent();
             resetModal.style = "display:none";
         })
 
@@ -248,11 +278,10 @@
 
     loadEditor();
 </script>
-
-    
-<script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
 <script src="{{.Site.BaseURL}}/js/editor.js"></script>
+
+<script src="{{.Site.BaseURL}}/js/codeMirror.js"></script>
+
 <script src="{{.Site.BaseURL}}/js/script.js"></script>
-<script src="{{.Site.BaseURL}}/js/navigation.js"></script>
 </body>
 </html>
