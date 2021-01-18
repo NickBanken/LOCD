@@ -7,30 +7,31 @@
         <link rel="stylesheet" href="../../../fontawesome/css/all.css">
         <link rel="icon" href="../../../img/locdfavicon.png" type="image/x-icon">    
     
-        
-    
+         
+
         <link rel="stylesheet" href="../../../codemirror/lib/codemirror.css">
         <link rel="stylesheet" href="../../../codemirror/theme/locd-dark.css">
-        <link rel="stylesheet" href="../../../codemirror/addon/hint/show-hint.css">
-    
-    
+
+
         
         <script src="../../../codemirror/lib/codemirror.js"></script>
         <script src="../../../codemirror/mode/javascript/javascript.js"></script>
         <script src="../../../codemirror/mode/css/css.js"></script>
         <script src="../../../codemirror/mode/xml/xml.js"></script>
         <script src="../../../codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    
-        <script src="../../../codemirror/addon/hint/show-hint.js"></script>
-        <script src="../../../codemirror/addon/hint/xml-hint.js"></script>
-        <script src="../../../codemirror/addon/hint/html-hint.js"></script>
+
         <script src="../../../js/split.js"></script>
+        <script src="../../../js/emmet.js"></script>
         
-    
+
         <link rel="stylesheet" type="text/css" href="../../../css/main.css">
         <link id="maxViewer" href="../../../css/max-screen.css" rel="stylesheet" disabled>
-        <link media="(max-width: 1000px)" href="../../../css/max-screen.css" rel="stylesheet">
+        <link media="(max-width: 1000px)"  href="../../../css/max-screen.css" rel="stylesheet">
         <link media="(max-width: 1000px)" href="../../../css/small-screen.css" rel="stylesheet">
+
+        <script src="../../../codemirror/addon/hint/show-hint.js"></script>
+        <script src="../../../codemirror/addon/hint/css-hint.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../codemirror/addon/hint/show-hint.css">
     
         <script>
             let stylesheet = document.getElementById("maxViewer");
@@ -40,17 +41,42 @@
             if(sessionStorage.getItem('maxScreen') == "true"){
                 stylesheet.disabled = false;
             }
+            
         </script>
+        
     </head>
 <body>
 
     
 	
-<header>
-    <nav class="nav">
-        <a href="../../../" class="nav__logo"></a>
-
-        <ul class="nav__menu">
+    <header>
+        <nav class="nav">
+            <a href="../../../" class="nav__logo"></a>
+    
+            <input class="menu__btn" type="checkbox" id="menu__btn" />
+            <label class="menu__icon" for="menu__btn">
+                <span class="nav__icon"></span>
+            </label>
+    
+            <ul class="nav__menu">
+                <li>
+                    <a href="#">Practice</a>
+                </li>
+                <li>
+                    <a href="#">Documentation</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="nav__backlayer"></div>
+    <nav>
+        <ul class="nav__menu--hamburger">
             <li>
                 <a href="#">Practice</a>
             </li>
@@ -64,9 +90,7 @@
                 <a href="#">About</a>
             </li>
         </ul>
-    </nav>
-</header>
-<div class="nav__backlayer"></div>
+    </nav>  
 
 
 
@@ -535,7 +559,12 @@ In the <code>&lt;body&gt;</code> element, add one list of each type with your ow
 </main>
 
 <script>
-
+    
+    Split([".editor__input", ".editor__output"], {
+    direction: "vertical",
+    gutterSize: 15,
+    });
+    
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
 
@@ -543,6 +572,7 @@ In the <code>&lt;body&gt;</code> element, add one list of each type with your ow
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
+        viewContent();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem("Lists",myContent);
@@ -568,7 +598,7 @@ In the <code>&lt;body&gt;</code> element, add one list of each type with your ow
             messagePop("Succesfully reset!");
             window.editor.setValue("\n\u003c!DOCTYPE html\u003e\r\n\u003chtml lang=\"en\"\u003e\r\n  \u003chead\u003e\r\n    \u003ctitle\u003eExercise 5 - Lists\u003c/title\u003e\r\n  \u003c/head\u003e\r\n  \u003cbody\u003e\r\n    \u003ch1\u003eTop 5 things to see in Bangkok\u003c/h1\u003e\r\n    \u003col\u003e\r\n      \u003cli\u003eRoyal palace\u003c/li\u003e\r\n      \u003cli\u003eWat Pho\u003c/li\u003e\r\n      \u003cli\u003eFloating market\u003c/li\u003e\r\n      \u003cli\u003eBaiyoke Sky Hotel\u003c/li\u003e\r\n      \u003cli\u003eChatuchak market\u003c/li\u003e\r\n    \u003c/ol\u003e\r\n    \u003ch1\u003eunordered list\u003c/h1\u003e\r\n    \u003cul\u003e\r\n      \u003cli\u003eThis\u003c/li\u003e\r\n      \u003cli\u003eis\u003c/li\u003e\r\n      \u003cli\u003ea\u003c/li\u003e\r\n      \u003cli\u003elist\u003c/li\u003e\r\n      \u003cli\u003ethat\u003c/li\u003e\r\n      \u003cli\u003eis\u003c/li\u003e\r\n      \u003cli\u003enot\u003c/li\u003e\r\n      \u003cli\u003eordered\u003c/li\u003e\r\n    \u003c/ul\u003e\r\n    \u003ch1\u003eDefinition list\u003c/h1\u003e\r\n    \u003cdl\u003e\r\n      \u003cdt\u003eWater\u003c/dt\u003e\r\n      \u003cdd\u003eis wet\u003c/dd\u003e\r\n      \u003cdt\u003eSand\u003c/dt\u003e\r\n      \u003cdd\u003eIt's coarse and rough and irritating and it gets everywhere\u003c/dd\u003e\r\n      \u003cdt\u003eThe sky\u003c/dt\u003e\r\n      \u003cdd\u003eIs blue\u003c/dd\u003e\r\n    \u003c/dl\u003e\r\n    \u003ch1\u003eNested lists\u003c/h1\u003e\r\n    \u003cul\u003e\r\n      \u003cli\u003e\r\n        Rock\r\n        \u003cul\u003e\r\n          \u003cli\u003egrunge\u003c/li\u003e\r\n          \u003cli\u003eprotopunk\u003c/li\u003e\r\n          \u003cli\u003emathcore\u003c/li\u003e\r\n        \u003c/ul\u003e\r\n      \u003c/li\u003e\r\n      \u003cli\u003e\r\n        EDM\r\n        \u003cul\u003e\r\n          \u003cli\u003efidget house\u003c/li\u003e\r\n          \u003cli\u003emoombahcore\u003c/li\u003e\r\n        \u003c/ul\u003e\r\n      \u003c/li\u003e\r\n    \u003c/ul\u003e\r\n    \u003cul\u003e\r\n      \u003cli\u003e\r\n        level1\r\n        \u003cul\u003e\r\n          \u003cli\u003e\r\n            level2\r\n            \u003cul\u003e\r\n              \u003cli\u003e\r\n                level3\r\n                \u003cul\u003e\r\n                  \u003cli\u003elevel4\u003c/li\u003e\r\n                \u003c/ul\u003e\r\n              \u003c/li\u003e\r\n            \u003c/ul\u003e\r\n          \u003c/li\u003e\r\n        \u003c/ul\u003e\r\n      \u003c/li\u003e\r\n    \u003c/ul\u003e\r\n  \u003c/body\u003e\r\n\u003c/html\u003e");
             localStorage.removeItem("Lists");
-            submitTryit();
+            viewContent();
             resetModal.style = "display:none";
         })
 
@@ -595,11 +625,10 @@ In the <code>&lt;body&gt;</code> element, add one list of each type with your ow
 
     loadEditor();
 </script>
-
-    
-<script src="../../../js/codeMirror.js"></script>
 <script src="../../../js/editor.js"></script>
+
+<script src="../../../js/codeMirror.js"></script>
+
 <script src="../../../js/script.js"></script>
-<script src="../../../js/navigation.js"></script>
 </body>
 </html>

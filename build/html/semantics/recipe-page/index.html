@@ -7,30 +7,31 @@
         <link rel="stylesheet" href="../../../fontawesome/css/all.css">
         <link rel="icon" href="../../../img/locdfavicon.png" type="image/x-icon">    
     
-        
-    
+         
+
         <link rel="stylesheet" href="../../../codemirror/lib/codemirror.css">
         <link rel="stylesheet" href="../../../codemirror/theme/locd-dark.css">
-        <link rel="stylesheet" href="../../../codemirror/addon/hint/show-hint.css">
-    
-    
+
+
         
         <script src="../../../codemirror/lib/codemirror.js"></script>
         <script src="../../../codemirror/mode/javascript/javascript.js"></script>
         <script src="../../../codemirror/mode/css/css.js"></script>
         <script src="../../../codemirror/mode/xml/xml.js"></script>
         <script src="../../../codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    
-        <script src="../../../codemirror/addon/hint/show-hint.js"></script>
-        <script src="../../../codemirror/addon/hint/xml-hint.js"></script>
-        <script src="../../../codemirror/addon/hint/html-hint.js"></script>
+
         <script src="../../../js/split.js"></script>
+        <script src="../../../js/emmet.js"></script>
         
-    
+
         <link rel="stylesheet" type="text/css" href="../../../css/main.css">
         <link id="maxViewer" href="../../../css/max-screen.css" rel="stylesheet" disabled>
-        <link media="(max-width: 1000px)" href="../../../css/max-screen.css" rel="stylesheet">
+        <link media="(max-width: 1000px)"  href="../../../css/max-screen.css" rel="stylesheet">
         <link media="(max-width: 1000px)" href="../../../css/small-screen.css" rel="stylesheet">
+
+        <script src="../../../codemirror/addon/hint/show-hint.js"></script>
+        <script src="../../../codemirror/addon/hint/css-hint.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../codemirror/addon/hint/show-hint.css">
     
         <script>
             let stylesheet = document.getElementById("maxViewer");
@@ -40,17 +41,42 @@
             if(sessionStorage.getItem('maxScreen') == "true"){
                 stylesheet.disabled = false;
             }
+            
         </script>
+        
     </head>
 <body>
 
     
 	
-<header>
-    <nav class="nav">
-        <a href="../../../" class="nav__logo"></a>
-
-        <ul class="nav__menu">
+    <header>
+        <nav class="nav">
+            <a href="../../../" class="nav__logo"></a>
+    
+            <input class="menu__btn" type="checkbox" id="menu__btn" />
+            <label class="menu__icon" for="menu__btn">
+                <span class="nav__icon"></span>
+            </label>
+    
+            <ul class="nav__menu">
+                <li>
+                    <a href="#">Practice</a>
+                </li>
+                <li>
+                    <a href="#">Documentation</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="nav__backlayer"></div>
+    <nav>
+        <ul class="nav__menu--hamburger">
             <li>
                 <a href="#">Practice</a>
             </li>
@@ -64,9 +90,7 @@
                 <a href="#">About</a>
             </li>
         </ul>
-    </nav>
-</header>
-<div class="nav__backlayer"></div>
+    </nav>  
 
 
 
@@ -381,7 +405,12 @@
 </main>
 
 <script>
-
+    
+    Split([".editor__input", ".editor__output"], {
+    direction: "vertical",
+    gutterSize: 15,
+    });
+    
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
 
@@ -389,6 +418,7 @@
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
+        viewContent();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem("Recipe formatting",myContent);
@@ -414,7 +444,7 @@
             messagePop("Succesfully reset!");
             window.editor.setValue("");
             localStorage.removeItem("Recipe formatting");
-            submitTryit();
+            viewContent();
             resetModal.style = "display:none";
         })
 
@@ -441,11 +471,10 @@
 
     loadEditor();
 </script>
-
-    
-<script src="../../../js/codeMirror.js"></script>
 <script src="../../../js/editor.js"></script>
+
+<script src="../../../js/codeMirror.js"></script>
+
 <script src="../../../js/script.js"></script>
-<script src="../../../js/navigation.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.79.1" />
+	<meta name="generator" content="Hugo 0.80.0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn offline coding by doing</title>
@@ -73,8 +73,6 @@
                 <a href="#">About</a>
             </li>
         </ul>
-
-        
     </nav>
 </header>
 <div class="nav__backlayer"></div>
@@ -405,7 +403,32 @@
                                 
                                 <div class="overlay__editor"></div>
 
-								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none"></textarea>
+								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title href=&#34;ewe&#34;&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+	&lt;h1&gt;This is a Heading&lt;/h1&gt;
+
+	&lt;script&gt;
+		
+	var button = document.createElement(&#34;button&#34;);
+	button.innerHTML = &#34;Do Something&#34;;
+
+	
+	var body = document.getElementsByTagName(&#34;body&#34;)[0];
+	body.appendChild(button);
+
+	
+	button.addEventListener (&#34;click&#34;, function() {
+	alert(&#34;did something&#34;);
+	});
+	&lt;/script&gt;
+        
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
 							</div>
 						</div>
 					</div>
@@ -433,7 +456,12 @@
 </main>
 
 <script>
-
+    
+    Split([".editor__input", ".editor__output"], {
+    direction: "vertical",
+    gutterSize: 15,
+    });
+    
     let saveButton = document.getElementById("saveButton");
     let resetButton = document.getElementById("resetButton");
 
@@ -441,7 +469,7 @@
     resetButton.addEventListener("click",resetEditor);
 
     function saveEditor(){
-        submitTryit();
+        viewContent();
         let myContent = document.getElementById("textareaCode").value;
         messagePop("Succesfully saved!");
         localStorage.setItem("Home",myContent);
@@ -467,7 +495,7 @@
             messagePop("Succesfully reset!");
             window.editor.setValue("\u003c!DOCTYPE html\u003e\r\n\u003chtml\u003e\r\n\u003chead\u003e\r\n    \u003ctitle href=\"ewe\"\u003ePage Title\u003c/title\u003e\r\n\u003c/head\u003e\r\n\u003cbody\u003e\r\n    \r\n\t\u003ch1\u003eThis is a Heading\u003c/h1\u003e\r\n\r\n\t\u003cscript\u003e\r\n\t\t\r\n\tvar button = document.createElement(\"button\");\r\n\tbutton.innerHTML = \"Do Something\";\r\n\r\n\t\r\n\tvar body = document.getElementsByTagName(\"body\")[0];\r\n\tbody.appendChild(button);\r\n\r\n\t\r\n\tbutton.addEventListener (\"click\", function() {\r\n\talert(\"did something\");\r\n\t});\r\n\t\u003c/script\u003e\r\n        \r\n\u003c/body\u003e\r\n\u003c/html\u003e");
             localStorage.removeItem("Home");
-            submitTryit();
+            viewContent();
             resetModal.style = "display:none";
         })
 
