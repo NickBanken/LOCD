@@ -34,7 +34,20 @@
     <script src="./codemirror/addon/hint/css-hint.js"></script>
     <link rel="stylesheet" type="text/css" href="./codemirror/addon/hint/show-hint.css">
 
-    
+    <style>
+        #textareacontainer{
+            position: absolute;
+        }
+
+        .input__container{
+            position: relative;
+        }
+
+        .html-editor{
+            z-index: 50;
+        }
+    </style>
+
     <script>
         let stylesheet = document.getElementById("maxViewer");
 
@@ -47,8 +60,6 @@
 
 </head>
 <body>
-
-    
 	
 <header>
     <nav class="nav">
@@ -123,7 +134,7 @@
             <p>Save successfull!</p>
         </div>
         
-        <div class="instructions">
+        <section class="instructions">
             <nav class="instructions__nav">
 				<div class="nav__wrapper">
 					<a class="prev" href=""><i class="fas fa-arrow-left"></i></a>
@@ -341,7 +352,7 @@
                 
 
 				
-				<h1 id="general-intro-to-the-course">General Intro to the Course</h1>
+				<h1 id="learn-to-make-websites-">Learn to make websites !</h1>
 <div class="instructions__image">
 	<img src='resources/learntocode.gif' alt='KittenRuler'>
 </div>
@@ -380,30 +391,29 @@
 				</div>
 			</nav>
 
-		</div>
-		<div class="editor">
-
-            
-            
+		</section>
+		<section class="editor">
 
             
             <div class="editor__input">
                 <div id="inputTab" class="input__tab">
-                    <div id="htmlView" class="tab tab--selected">index.html</div>
-                     
+                    <div data-link="html-editor" id="htmlView" class="tab tab--selected">index.html</div>
+                    <div data-link="css-editor" id="cssView" class="tab">style.css</div>
+                    <div data-link="js-editor" id="jsView" class="tab">script.js</div>
+                    
 
                     <button id="saveButton" class="editorButton editorButton__saveButton">Save</button>
                     <button id="resetButton" class="editorButton editorButton__resetButton">Reset</button>
                 </div>
                 <div class="input__container">
 					
-					<div id="textareacontainer">
+					<div id="textareacontainer" class="html-editor">
 						<div class="textarea">
 							<div id="textareawrapper">
                                 
                                 <div class="overlay__editor"></div>
 
-								<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false" style="display:none">&lt;!DOCTYPE html&gt;
+								<textarea autocomplete="off" id="textareaCodeHTML" wrap="logical" spellcheck="false" style="display:none">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;title href=&#34;ewe&#34;&gt;Page Title&lt;/title&gt;
@@ -431,6 +441,22 @@
 &lt;/html&gt;</textarea>
 							</div>
 						</div>
+                    </div>
+                    <div id="textareacontainer" class="css-editor">
+						<div class="textarea">
+							<div id="textareawrapper">
+								<textarea autocomplete="off" id="textareaCodeCSS" wrap="logical" spellcheck="false" style="display:none">h1{
+    color:red;
+}</textarea>
+							</div>
+						</div>
+                    </div>
+                    <div id="textareacontainer" class="js-editor">
+						<div class="textarea">
+							<div id="textareawrapper">
+								<textarea autocomplete="off" id="textareaCodeJS" wrap="logical" spellcheck="false" style="display:none">let index = 4;</textarea>
+							</div>
+						</div>
 					</div>
                 </div>
             </div>
@@ -451,9 +477,30 @@
                     </div>
                 </div>
 			</div>        
-        </div>  
+        </section>  
     </div>
 </main>
+<div id="debugDiv"></div>
+
+<script>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
 
 <script>
     
@@ -470,15 +517,23 @@
 
     function saveEditor(){
         viewContent();
-        let myContent = document.getElementById("textareaCode").value;
+        let htmlContent = document.getElementById("textareaCodeHTML").value;
+        let cssContent = document.getElementById("textareaCodeCSS").value;
+        let jsContent = document.getElementById("textareaCodeJS").value;
         messagePop("Succesfully saved!");
-        localStorage.setItem("Home",myContent);
+        localStorage.setItem(`${ "Home" }-html`,htmlContent);
+        localStorage.setItem(`${ "Home" }-css`,cssContent);
+        localStorage.setItem(`${ "Home" }-js`,jsContent);
     }
 
     function loadEditor(){
-        let content = localStorage.getItem("Home");
-        if(content){
-            document.getElementById("textareaCode").value = content;
+        let htmlContent = localStorage.getItem(`${ "Home" }-html`);
+        let cssContent = localStorage.getItem(`${ "Home" }-css`);
+        let jsContent = localStorage.getItem(`${ "Home" }-js`);
+        if(htmlContent){
+            document.getElementById("textareaCodeHTML").value = htmlContent;
+            document.getElementById("textareaCodeCSS").value = cssContent;
+            document.getElementById("textareaCodeJS").value = jsContent;
         }
     }
 
@@ -491,10 +546,14 @@
         resetModal.style = "display:block";
 
         acceptButton.addEventListener("click",()=>{
-            let myContent = document.getElementById("textareaCode").value;
+            console.log("clicked!")
+            let htmlView= document.getElementById("textareaCodeHTML");
             messagePop("Succesfully reset!");
-            window.editor.setValue("\u003c!DOCTYPE html\u003e\r\n\u003chtml\u003e\r\n\u003chead\u003e\r\n    \u003ctitle href=\"ewe\"\u003ePage Title\u003c/title\u003e\r\n\u003c/head\u003e\r\n\u003cbody\u003e\r\n    \r\n\t\u003ch1\u003eThis is a Heading\u003c/h1\u003e\r\n\r\n\t\u003cscript\u003e\r\n\t\t\r\n\tvar button = document.createElement(\"button\");\r\n\tbutton.innerHTML = \"Do Something\";\r\n\r\n\t\r\n\tvar body = document.getElementsByTagName(\"body\")[0];\r\n\tbody.appendChild(button);\r\n\r\n\t\r\n\tbutton.addEventListener (\"click\", function() {\r\n\talert(\"did something\");\r\n\t});\r\n\t\u003c/script\u003e\r\n        \r\n\u003c/body\u003e\r\n\u003c/html\u003e");
-            localStorage.removeItem("Home");
+            HTMLeditor.setValue("\u003c!DOCTYPE html\u003e\r\n\u003chtml\u003e\r\n\u003chead\u003e\r\n    \u003ctitle href=\"ewe\"\u003ePage Title\u003c/title\u003e\r\n\u003c/head\u003e\r\n\u003cbody\u003e\r\n    \r\n\t\u003ch1\u003eThis is a Heading\u003c/h1\u003e\r\n\r\n\t\u003cscript\u003e\r\n\t\t\r\n\tvar button = document.createElement(\"button\");\r\n\tbutton.innerHTML = \"Do Something\";\r\n\r\n\t\r\n\tvar body = document.getElementsByTagName(\"body\")[0];\r\n\tbody.appendChild(button);\r\n\r\n\t\r\n\tbutton.addEventListener (\"click\", function() {\r\n\talert(\"did something\");\r\n\t});\r\n\t\u003c/script\u003e\r\n        \r\n\u003c/body\u003e\r\n\u003c/html\u003e");
+            CSSeditor.setValue("");
+            localStorage.removeItem(`${ "Home" }-html`);
+            localStorage.removeItem(`${ "Home" }-css`);
+            localStorage.removeItem(`${ "Home" }-js`);
             viewContent();
             resetModal.style = "display:none";
         })
@@ -512,7 +571,6 @@
 
     function messagePop(text){
         let message = document.querySelector(".successMessage");
-        console.log(message.firstElementChild.innerHTML = text)
         message.classList.add("activeMessage");
 
         message.addEventListener('animationend', () => {
@@ -521,11 +579,69 @@
     }
 
     loadEditor();
+
+    
 </script>
+
+<script>
+        let inputButtons = Array.from(document.getElementById("inputTab").children);
+        
+        inputButtons.forEach(element => {
+            if(element.tagName === "DIV"){
+                element.addEventListener("click",()=>{
+                console.log(element)
+                let parent = element.parentElement;
+                let views = [...document.querySelector(".input__container").children];
+                
+
+                console.log(views)
+                let currentActive = parent.querySelector('.tab--selected');
+                currentActive.classList.remove('tab--selected')
+                element.classList.add('tab--selected')
+                console.log(element.dataset.link)
+                
+                views.forEach(view =>{
+                    if(view.className !== element.dataset.link){
+                        view.style.display = "none";
+                    }else{
+                        view.style.display = "block";
+                    }
+                })
+            })
+            }
+        }); 
+    </script>
     
 <script src="./js/codeMirror.js"></script>
 <script src="./js/editor.js"></script>
 <script src="./js/script.js"></script>
+<script>
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+
+
+</script>
 
 </body>
 </html>
